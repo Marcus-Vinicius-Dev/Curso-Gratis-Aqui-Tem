@@ -1,0 +1,69 @@
+/* Defina um estilo global para o body para evitar margens padrão e preenchimento */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F0F2F5;
+}
+
+/* Estilize o cabeçalho */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white; /* Cor de fundo do cabeçalho */
+    color: black; /* Cor do texto do cabeçalho */
+    padding: 10px 20px; /* Espaçamento interno */
+}
+
+/* Estilize o logo (à esquerda) */
+.logo {
+    flex: 1; /* Ocupa todo o espaço disponível à esquerda */
+}
+
+/* Estilize o menu (ao centro) */
+.menu {
+    width: 100%;
+    text-align: center;
+    height: 100px; /* Altura desejada para o cabeçalho */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;  
+    justify-content: center; /* Centraliza horizontalmente os itens do menu */
+    align-items: center; /* Centraliza verticalmente os itens do menu */  
+}
+
+.menu li {
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+.menu a {
+    text-decoration: none;
+    color: black; /* Cor do texto do menu */
+}
+
+/* Estilize a caixa de pesquisa */
+.search input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F0F2F5;
+}
+
+.search button {
+    padding: 5px 10px;
+    background-color: #F0F2F5; /* Cor de fundo do botão de pesquisa */
+    border: none;
+    border-radius: 5px;
+    color: black; /* Cor do texto do botão de pesquisa */
+    margin-left: 5px;
+}
+
+/* Estilize o ícone de menu e o ícone de conta (à direita) */
+.user a {
+    margin-left: 20px; /* Espaçamento entre os ícones */
+    text-decoration: none;
+    color: black; /* Cor dos ícones */
+}

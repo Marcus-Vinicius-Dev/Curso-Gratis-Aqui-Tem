@@ -1,50 +1,46 @@
-/* Defina um estilo global para o body para evitar margens padrão e preenchimento */
 body {
     margin: 0;
     padding: 0;
     background-color: #F0F2F5;
 }
 
-/* Estilize o cabeçalho */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white; /* Cor de fundo do cabeçalho */
-    color: black; /* Cor do texto do cabeçalho */
-    padding: 10px 20px; /* Espaçamento interno */
+    background-color: white; 
+    color: black; 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilize o logo (à esquerda) */
 .logo {
-    flex: 1; /* Ocupa todo o espaço disponível à esquerda */
+    flex: 1; 
 }
 
-/* Estilize o menu (ao centro) */
 .menu {
     width: 100%;
     text-align: center;
-    height: 100px; /* Altura desejada para o cabeçalho */
+    height: 100px; 
 }
 
 .menu ul {
     list-style: none;
     padding: 0;
     display: flex;  
-    justify-content: center; /* Centraliza horizontalmente os itens do menu */
-    align-items: center; /* Centraliza verticalmente os itens do menu */  
+    justify-content: center; 
+    align-items: center;   
 }
 
 .menu li {
-    margin-right: 20px; /* Espaçamento entre os itens do menu */
+    margin-right: 20px; 
 }
 
 .menu a {
     text-decoration: none;
-    color: black; /* Cor do texto do menu */
+    color: black; 
 }
 
-/* Estilize a caixa de pesquisa */
 .search input[type="text"] {
     padding: 5px;
     border: none;
@@ -54,16 +50,45 @@ body {
 
 .search button {
     padding: 5px 10px;
-    background-color: #F0F2F5; /* Cor de fundo do botão de pesquisa */
+    background-color: #F0F2F5; 
     border: none;
     border-radius: 5px;
-    color: black; /* Cor do texto do botão de pesquisa */
+    color: black; 
     margin-left: 5px;
 }
 
-/* Estilize o ícone de menu e o ícone de conta (à direita) */
 .user a {
-    margin-left: 20px; /* Espaçamento entre os ícones */
+    margin-left: 20px; 
     text-decoration: none;
-    color: black; /* Cor dos ícones */
+    color: black; 
+}
+
+.menu-lateral {
+    background-color: white;
+    color: black;
+    width: 350px;
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; 
+    margin-top: 120px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral li {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-lateral i {
+    margin-right: 10px;
 }

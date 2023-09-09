@@ -5,29 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Grátis Aqui Tem</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
+
         <div class="header-container">
+
             <div class="logo">
                 <p>Logo</p>
             </div>
+
             <div class="menu">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Cursos</a></li>
                 </ul>
             </div>
+
             <div class="botao-procurar">
                 <input type="text" placeholder="Encontrar no Portal">
                 <button>Buscar Cursos</button>
             </div>
+
             <div class="user">
                 <a href="#"><img src="icone-menu.png" alt="Menu"></a>
                 <a href="#"><img src="icone-conta.png" alt="Conta"></a>
             </div>
+            
         </div>
     </header>
+
     <aside class="menu-lateral">
         <ul>
             <li><i class="fas fa-globe"></i> Tudo</li>
@@ -38,16 +46,52 @@
             <li><i class="fas fa-map-marker-alt"></i> Locais</li>
         </ul>
     </aside>
-    <div class="post-card">
-        <div class="post-conteudo">
-          <!-- Conteúdo da postagem (texto, imagem, etc.) -->
-          <p>Conteúdo da postagem...</p>
-        </div>
-        <div class="post-acoes">
-          <button class="acoes-btn like-btn">Curtir</button>
-          <button class="acoes-btn comentario-btn">Comentar</button>
-          <button class="acoes-btn compartilhar-btn">Compartilhar</button>
-        </div>
-      </div>      
+    
+    <div class="postagens-container">
+        <div class="post-card">
+            <div class="post-conteudo">
+              <img src="imagens/curso.png" alt="Cursos Grátis Aqui Tem">
+              <p>Conteúdo da postagem...</p>
+            </div>
+            <div class="post-acoes">
+              <button class="acoes-btn like-btn">Curtir</button>
+              <button class="acoes-btn comentario-btn">Comentar</button>
+              <button class="acoes-btn compartilhar-btn">Compartilhar</button>
+            </div>
+        </div> 
+    </div>  
+
+    <div class="postagens-container">
+        <div class="post-card">
+            <div class="post-conteudo">
+              <img src="imagens/curso.png" alt="Cursos Grátis Aqui Tem">
+              <p>Conteúdo da postagem...</p>
+            </div>
+            <div class="post-acoes">
+              <button class="acoes-btn like-btn">Curtir</button>
+              <button class="acoes-btn comentario-btn">Comentar</button>
+              <button class="acoes-btn compartilhar-btn">Compartilhar</button>
+            </div>
+        </div> 
+    </div> 
+
+    <div class="postagens-container">
+        <div class="post-card">            
+            <div class="post-conteudo">
+              <img src="imagens/curso.png" alt="Cursos Grátis Aqui Tem">
+              <p>Conteúdo da postagem...</p>
+            </div>            
+            <div class="post-acoes">
+              <button class="acoes-btn like-btn">Curtir</button>
+              <button class="acoes-btn comentario-btn">Comentar</button>
+              <button class="acoes-btn compartilhar-btn">Compartilhar</button>
+            </div>
+        </div> 
+    </div> 
+    
+    <div class="loading-indicator" id="loading-indicator">
+        <p>Carregando...</p>
+    </div>
+
 </body>
 </html>

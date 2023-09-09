@@ -1,138 +1,138 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #F0F2F5;
+  margin: 0;
+  padding: 0;
+  background-color: #F0F2F5;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white; 
-    color: black; 
-    padding: 10px 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; 
+  color: black; 
+  padding: 5px 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
-    flex: 1; 
+  flex: 1; 
 }
 
 .menu {
-    width: 100%;
-    text-align: center;
-    height: 100px; 
+  width: 100%;
+  text-align: center;
+  height: 40px; 
 }
 
 .menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;  
-    justify-content: center; 
-    align-items: center;   
+  list-style: none;
+  padding: 0;
+  display: flex;  
+  justify-content: center; 
+  align-items: center;   
 }
 
 .menu li {
-    margin-right: 20px; 
+  margin-right: 20px; 
 }
 
 .menu a {
-    text-decoration: none;
-    color: black; 
+  text-decoration: none;
+  color: black; 
 }
 
 .search input[type="text"] {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #F0F2F5;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #F0F2F5;
 }
 
 .search button {
-    padding: 5px 10px;
-    background-color: #F0F2F5; 
-    border: none;
-    border-radius: 5px;
-    color: black; 
-    margin-left: 5px;
+  padding: 5px 10px;
+  background-color: #F0F2F5; 
+  border: none;
+  border-radius: 5px;
+  color: black; 
+  margin-left: 5px;
 }
 
 .user a {
     margin-left: 20px; 
     text-decoration: none;
     color: black; 
-  
 }
 
 .menu-lateral {
-    background-color: white;
-    color: black;
-    width: 350px;
-    height: 100%;     
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto; 
-    margin-top: 60px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    z-index: 1;
+  background-color: white;
+  color: black;
+  width: 350px;
+  height: 100%;     
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto; 
+  margin-top: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 1;
 }
 
 .menu-lateral ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .menu-lateral li {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .menu-lateral i {
-    margin-right: 10px;
+  margin-right: 10px;
 }
-=======
+.post-card {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-left: 600px;
+  margin-right: 250px;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.post-card {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-left: 600px;
-    margin-right: 250px;
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .post-conteudo {
-    /* Estilos para postagem */ 
-  }
-  
-  .post-acoes {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .acoes-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .like-btn {
-    background-color: #007bff;
-  }
-  
-  .comentario-btn {
-    background-color: #28a745;
-  }
-  
-  .compartilhar-btn {
-    background-color: #ffc107;
-  }
+.post-conteudo {
+  /* Estilos para o conteúdo da postagem */
+}
+
+.post-acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.acoes-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Estilos para os ícones de ação (opcional) */
+.like-btn {
+  background-color: #007bff;
+}
+
+.comentario-btn {
+  background-color: #28a745;
+}
+
+.compartilhar-btn {
+  background-color: #ffc107;
+}

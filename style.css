@@ -8,10 +8,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white; 
-    color: black; 
-    padding: 10px 20px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: white; /* Cor de fundo do cabeçalho */
+    color: black; /* Cor do texto do cabeçalho */
+    padding: 10px 20px; /* Espaçamento interno */
 }
 
 .logo {
@@ -21,7 +20,7 @@ body {
 .menu {
     width: 100%;
     text-align: center;
-    height: 100px; 
+    height: 100px; /* Altura desejada para o cabeçalho */
 }
 
 .menu ul {
@@ -60,35 +59,5 @@ body {
 .user a {
     margin-left: 20px; 
     text-decoration: none;
-    color: black; 
-}
-
-.menu-lateral {
-    background-color: white;
-    color: black;
-    width: 350px;
-    height: 100%; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto; 
-    margin-top: 120px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-}
-
-.menu-lateral ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-lateral li {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.menu-lateral i {
-    margin-right: 10px;
+    color: black; /* Cor dos ícones */
 }

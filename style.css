@@ -1,9 +1,10 @@
-body {
+body { /*especificações mínimas para a página do portal*/
   margin: 0;
   padding: 0;
   background-color: #F0F2F5;
+  padding-top: 100px; /*para que o cabeçalho possa ter espaço a fim de que se torne possível a plicação de ajustes*/
 }
-
+/***********Cabeçalho início************/
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -13,11 +14,10 @@ body {
   padding: 5px 5px; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 2;
-}
-
-.logo {
-  flex: 1; 
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  margin-top: -100px;
 }
 
 .menu {
@@ -64,7 +64,8 @@ body {
     text-decoration: none;
     color: black; 
 }
-
+/***********Cabeçalho fim************/
+/***********Menu Lateral início************/
 .menu-lateral {
   background-color: white;
   color: black;
@@ -95,9 +96,15 @@ body {
 .menu-lateral i {
   margin-right: 10px;
 }
+/***********Menu Lateral fim************/
+/***********Conteúdo de Postagens início************/
+.postagens-container {
+  margin-top: 10px;
+}
+
 .post-card {
   border: 1px solid #ccc;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-left: 600px;
   margin-right: 250px;
   margin-top: 30px;
@@ -107,7 +114,17 @@ body {
 }
 
 .post-conteudo {
-  /* Estilos para o conteúdo da postagem */
+
+}
+
+.post-conteudo img {
+  width: 100%; 
+  height: auto; 
+}
+
+.post-conteudo p {
+  text-align: center;
+  text-decoration: bold;
 }
 
 .post-acoes {
@@ -124,7 +141,6 @@ body {
   cursor: pointer;
 }
 
-/* Estilos para os ícones de ação (opcional) */
 .like-btn {
   background-color: #007bff;
 }
@@ -136,3 +152,11 @@ body {
 .compartilhar-btn {
   background-color: #ffc107;
 }
+/***********Conteúdo de Postagens fim************/
+/***********Conteúdo da Classe Recarregar início************/
+.indicador-de-carregamento {
+  display: none;
+  margin-left: 500px;
+  z-index: 90;
+}
+/***********Conteúdo da Classe Recarregar fim************/

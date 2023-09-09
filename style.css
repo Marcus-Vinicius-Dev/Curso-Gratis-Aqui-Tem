@@ -8,9 +8,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white; /* Cor de fundo do cabeçalho */
-    color: black; /* Cor do texto do cabeçalho */
-    padding: 10px 20px; /* Espaçamento interno */
+    background-color: white; 
+    color: black; 
+    padding: 10px 20px; 
 }
 
 .logo {
@@ -20,7 +20,7 @@ body {
 .menu {
     width: 100%;
     text-align: center;
-    height: 100px; /* Altura desejada para o cabeçalho */
+    height: 100px; 
 }
 
 .menu ul {
@@ -60,6 +60,7 @@ body {
     margin-left: 20px; 
     text-decoration: none;
     color: black; 
+  
 }
 
 .menu-lateral {
@@ -92,6 +93,9 @@ body {
 .menu-lateral i {
     margin-right: 10px;
 }
+=======
+}
+
 .post-card {
     border: 1px solid #ccc;
     margin-bottom: 20px;
@@ -121,7 +125,6 @@ body {
     cursor: pointer;
   }
   
-  /* Estilos para os ícones de ação (opcional) */
   .like-btn {
     background-color: #007bff;
   }

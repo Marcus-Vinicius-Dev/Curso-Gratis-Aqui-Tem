@@ -10,10 +10,7 @@ body {
     align-items: center;
     background-color: white; 
     color: black; 
-    padding: 5px 5px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 2;
+    padding: 10px 20px; 
 }
 
 .logo {
@@ -23,7 +20,7 @@ body {
 .menu {
     width: 100%;
     text-align: center;
-    height: 40px; 
+    height: 100px; 
 }
 
 .menu ul {
@@ -65,36 +62,6 @@ body {
     color: black; 
 }
 
-.menu-lateral {
-    background-color: white;
-    color: black;
-    width: 350px;
-    height: 100%;     
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto; 
-    margin-top: 60px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    z-index: 1;
-}
-
-.menu-lateral ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-lateral li {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.menu-lateral i {
-    margin-right: 10px;
-}
 .post-card {
     border: 1px solid #ccc;
     margin-bottom: 20px;
@@ -124,7 +91,6 @@ body {
     cursor: pointer;
   }
   
-  /* Estilos para os ícones de ação (opcional) */
   .like-btn {
     background-color: #007bff;
   }
@@ -136,4 +102,5 @@ body {
   .compartilhar-btn {
     background-color: #ffc107;
   }
-  
+
+

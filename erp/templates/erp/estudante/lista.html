@@ -1,0 +1,64 @@
+{% extends "erp/_layouts/base.html" %}
+
+{% block title %}Lista de Estudantes{% endblock %}
+
+{% load primeira_letra %}
+
+{% block conteudo %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card border-dark" data-aos="fade-in" data-aos-duration="750">
+                    <div class="card-header"><b>Lista de Estudantes Cadastrados</b></div>
+                    <div class="card-body">
+                        {% if estudante|length > 0 %}
+                            <!--<p class="card-text">Aqui está a lista de <code>Instituicao</code> cadastradas.</p>-->
+
+                            <table class="table table-light table-striped table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <!--<th scope="col"></th>>-->
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Sobrenome</th>
+                                        <th scope="col">Nascimento</th>
+                                        <th scope="col">Tel/WhatsApp</th>
+                                        <th scope="col">E-mail</th>
+                                        <th scope="col">Sexo</th>
+                                        <th scope="col" class="text-center">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for estudante in estudante %}
+                                    <tr>
+                                        <td>{{ estudante.nome }}</td>
+                                        <td>{{ estudante.sobrenome }}</td>
+                                        <td>{{ estudante.data_nascimento }}</td>
+                                        <td>{{ estudante.telefone }}</td>
+                                        <td>{{ estudante.email }}</td>
+                                        <td>{{ estudante.sexo }}</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'erp:atualiza_estudante' pk=estudante.id %}"
+                                            class="btn btn-primary btn-sm">
+                                                Atualizar
+                                            </a>
+                                            <a href="{% url 'erp:deleta_estudante' pk=estudante.id %}"
+                                            class="btn btn-danger btn-sm">
+                                                Excluir
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <div class="text-center mt-5 mb-5 jumbotron">
+                                <h5>Nenhum <code>Estudante</code> cadastrado ainda.</h5>
+                            </div>
+                        {% endif %}
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

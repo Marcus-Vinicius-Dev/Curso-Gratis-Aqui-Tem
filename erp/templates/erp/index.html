@@ -1,0 +1,85 @@
+<!-- Estendemos do template base -->
+{% extends "erp/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Cursos Grátis Aqui tem{% endblock %}
+
+<!-- Bloco de conteúdo da nossa página -->
+{% block conteudo %}
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header">Instituição</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Pesquise uma <code> Instituição</code>.
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'erp:cadastra_instituicao' %}"
+                        
+                        class="btn btn-primary btn-sm">
+                            Cadastrar
+                        </a>
+                        <a href="{% url 'erp:lista_instituicao' %}"
+                        class="btn btn-primary btn-sm">
+                            Listar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header">Cursos</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Pesquise os <code> Cursos</code>.
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'erp:cadastra_cursos' %}"
+                            class="btn btn-primary btn-sm">
+                            Cadastrar
+                        </a>
+                        <a href="{% url 'erp:lista_cursos' %}"
+                            class="btn btn-primary btn-sm">
+                            Listar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header">Categorias</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Pesquise por<code> Categorias dos Cursos</code>.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>-->
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card border-dark">
+                    <div class="card-header">Estudante</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Pesquise <code> Estudantes</code>.
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'erp:cadastra_estudante' %}"
+                            class="btn btn-primary btn-sm">
+                            Cadastrar
+                        </a>
+                        <a href="{% url 'erp:lista_estudante' %}"
+                            class="btn btn-primary btn-sm">
+                            Listar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+{% endblock %}

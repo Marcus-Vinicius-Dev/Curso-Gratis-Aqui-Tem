@@ -1,8 +1,8 @@
 from django.db.models import Sum
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, UpdateView, CreateView, DeleteView
-from core.models import Instituicao, Cursos, Categorias
-from erp.forms import InsereCategoriasForm, InsereInstituicaoForm, InsereCursosForm
+from core.models import Instituicao, Cursos, Estudante
+from erp.forms import InsereInstituicaoForm, InsereCursosForm, InsereEstudanteForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
@@ -27,7 +27,6 @@ class HomeInstituicaoView(TemplateView):
 # LISTA DE INSTITUICOES
 # ----------------------------------------------
 
-
 class ListaInstituicaoView(ListView):
     template_name = "erp/instituicao/lista.html"
     model = Instituicao
@@ -37,6 +36,7 @@ class ListaInstituicaoView(ListView):
 # CADASTRAMENTO DE INSTITUICOES
 # ----------------------------------------------
 
+#@login_required
 class CriaInstituicaoView(CreateView):
     template_name = "erp/instituicao/cria.html"
     model = Instituicao
@@ -47,6 +47,7 @@ class CriaInstituicaoView(CreateView):
 # ATUALIZAÇÃO DE INSTITUICAO
 # ----------------------------------------------
 
+#@login_required
 class AtualizaInstituicaoView(UpdateView):
     template_name = "erp/instituicao/atualiza.html"
     model = Instituicao
@@ -58,6 +59,7 @@ class AtualizaInstituicaoView(UpdateView):
 # EXCLUSÃO DE INSTITUICAO
 # ----------------------------------------------
 
+#@login_required
 class DeletaInstituicaoView(DeleteView):
     template_name = "erp/instituicao/exclui.html"
     model = Instituicao
@@ -84,6 +86,7 @@ class ListaCursosView(ListView):
 # CADASTRAMENTO DE CURSOS
 # ----------------------------------------------
 
+#@login_required
 class CriaCursosView(CreateView):
     template_name = "erp/cursos/cria.html"
     model = Cursos
@@ -94,6 +97,7 @@ class CriaCursosView(CreateView):
 # ATUALIZAÇÃO DE CURSOS
 # ----------------------------------------------
 
+#@login_required
 class AtualizaCursosView(UpdateView):
     template_name = "erp/cursos/atualiza.html"
     model = Cursos
@@ -105,6 +109,7 @@ class AtualizaCursosView(UpdateView):
 # EXCLUSÃO DE CURSOS
 # ----------------------------------------------
 
+#@login_required
 class DeletaCursosView(DeleteView):
     template_name = "erp/cursos/exclui.html"
     model = Cursos
@@ -115,45 +120,94 @@ class DeletaCursosView(DeleteView):
 # PÁGINA PRINCIPAL CATEGORIAS
 # ----------------------------------------------
 
-class HomeCategoriasView(TemplateView):
-    template_name = "erp/categorias/index.html"
+#class HomeCategoriasView(TemplateView):
+#    template_name = "erp/categorias/index.html"
 
 
 # LISTA DE CATEGORIAS
 # ----------------------------------------------
 
-class ListaCategoriasView(ListView):
-    template_name = "erp/categorias/lista.html"
-    model = Categorias
-    context_object_name = "categorias"
+#class ListaCategoriasView(ListView):
+#    template_name = "erp/categorias/lista.html"
+#    model = Categorias
+#    context_object_name = "categorias"
 
 
-# CADASTRAMENTO DE CURSOS
+# CADASTRAMENTO DE CATEGORIAS
 # ----------------------------------------------
 
-class CriaCategoriasView(CreateView):
-    template_name = "erp/categorias/cria.html"
-    model = Categorias
-    form_class = InsereCategoriasForm
-    success_url = reverse_lazy("erp:lista_categorias")
+#@login_required
+#class CriaCategoriasView(CreateView):
+#    template_name = "erp/categorias/cria.html"
+#    model = Categorias
+#    form_class = InsereCategoriasForm
+#    success_url = reverse_lazy("erp:lista_categorias")
 
 
 # ATUALIZAÇÃO DE CATEGORIAS
 # ----------------------------------------------
 
-class AtualizaCategoriasView(UpdateView):
-    template_name = "erp/categorias/atualiza.html"
-    model = Categorias
-    fields = '__all__'
-    context_object_name = 'categorias'
-    success_url = reverse_lazy("erp:lista_categorias")
+#@login_required
+#class AtualizaCategoriasView(UpdateView):
+#    template_name = "erp/categorias/atualiza.html"
+#    model = Categorias
+#    fields = '__all__'
+#    context_object_name = 'categorias'
+#    success_url = reverse_lazy("erp:lista_categorias")
 
 
-# EXCLUSÃO DE CURSOS
+# EXCLUSÃO DE CATEGORIAS
 # ----------------------------------------------
 
-class DeletaCategoriasView(DeleteView):
-    template_name = "erp/categorias/exclui.html"
-    model = Categorias
-    context_object_name = 'categorias'
-    success_url = reverse_lazy("erp:lista_categorias")
+#@login_required
+#class DeletaCategoriasView(DeleteView):
+#    template_name = "erp/categorias/exclui.html"
+#    model = Categorias
+#    context_object_name = 'categorias'
+#    success_url = reverse_lazy("erp:lista_categorias")
+
+
+# CADASTRAMENTO DE ESTUDANTES
+# ----------------------------------------------
+
+class HomeEstudanteView(TemplateView):
+    template_name = "erp/estudante/index.html"
+    
+# LISTA DE ESTUDANTES
+# ----------------------------------------------
+
+class ListaEstudanteView(ListView):
+    template_name = "erp/estudante/lista.html"
+    model = Estudante
+    context_object_name = "estudante"
+
+#@login_required
+class CriaEstudanteView(CreateView):
+    template_name = "erp/estudante/cria.html"
+    model = Estudante
+    form_class = InsereEstudanteForm
+    success_url = reverse_lazy("erp:lista_estudante")
+
+
+# ATUALIZAÇÃO DE ESTUDANTES
+# ----------------------------------------------
+
+#@login_required
+class AtualizaEstudanteView(UpdateView):
+    template_name = "erp/estudante/atualiza.html"
+    model = Estudante
+    fields = '__all__'
+    context_object_name = 'estudante'
+    success_url = reverse_lazy("erp:lista_estudante")
+
+
+# EXCLUSÃO DE ESTUDANTES
+# ----------------------------------------------
+
+#@login_required
+class DeletaEstudanteView(DeleteView):
+    template_name = "erp/estudante/exclui.html"
+    model = Estudante
+    context_object_name = 'estudante'
+    success_url = reverse_lazy("erp:lista_estudante")
+

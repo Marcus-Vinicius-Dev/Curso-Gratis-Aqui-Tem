@@ -98,7 +98,7 @@ body { /*especificações mínimas para a página do portal*/
 
 .botao-procurar input:hover {
   background-color: #f0f0f0; 
-  cursor: pointer; 
+  cursor: text; 
   border-radius: 10px;
   border: black solid 1px;
 }

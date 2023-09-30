@@ -17,9 +17,16 @@ nav.navbar{
 .nav-link{
     margin-top: 13px;
     font-weight: bold;
-    font-size: 20px;
-    margin-left: 60px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
+    color: #FFFFFF;
+}
+.nav-link-cadastro{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
     font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
     color: #FFFFFF;
 }
@@ -35,12 +42,6 @@ body{
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-}
-/*.row>*{
-    padding-right: 0;
-}*/
-.mt-5{
-    margin-top: 2rem!important;
 }
 .mb-5{
     font-weight: bold;
@@ -68,6 +69,13 @@ button.login{
     border-radius: 5px;
     width: 170px;
 }
+.login{
+    position: relative;
+    /*margin-top: 70px;*/
+    margin-right: 100px;
+    text-decoration: none;
+    color: rgb(0, 255, 4);
+}
 a.logout{
     position: absolute;
     margin-top: 20px;
@@ -82,13 +90,15 @@ a.logout{
 #id_categoria{
     height:40px;
 }
-.card.border-dark{
-    margin-bottom: 20px;
+.card-body{
+    padding: 8px;
+}
+tbody{
+    border-style:hidden;
 }
 footer{
     position: absolute;
     bottom: 0;
-    /*top: 92.2%;*/
     width: 100%;
     height: 62px;
     background-color: #000000!important;

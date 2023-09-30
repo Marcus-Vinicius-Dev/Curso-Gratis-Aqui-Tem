@@ -1,20 +1,19 @@
 from django.urls import path
 from erp import views
 from django.contrib.auth import views as auth_views
-from . import views
 
 app_name = 'erp'
 
 urlpatterns = [
+    # GET /index
+    path('', views.HomeView.as_view(), name="index"),
+    
     #POST /Login
     path('../accounts/login/', auth_views.LoginView.as_view(), name='login'),
     
     #POST /Logout
     path('logout/', auth_views.LogoutView.as_view(template_name='login.html'), name='logout'),
         
-    # GET /
-    path('', views.HomeView.as_view(), name="index"),
-
     # GET /instituicao
     path('instituicao/', views.HomeInstituicaoView.as_view(), name="index_instituicao"),
 
@@ -47,18 +46,34 @@ urlpatterns = [
     
     #---------------
     # GET /categorias
-    path('categorias/', views.HomeCategoriasView.as_view(), name="index_categorias"),
+    #path('categorias/', views.HomeCategoriasView.as_view(), name="index_categorias"),
 
-    # GET /cursos/cadastrar
-    path('categorias/cadastrar', views.CriaCategoriasView.as_view(), name="cadastra_categorias"),
+    # GET /categorias/cadastrar
+    #path('categorias/cadastrar', views.CriaCategoriasView.as_view(), name="cadastra_categorias"),
 
-    # GET /cursos
-    path('categorias/lista', views.ListaCategoriasView.as_view(), name="lista_categorias"),
+    # GET /categorias
+    #path('categorias/lista', views.ListaCategoriasView.as_view(), name="lista_categorias"),
 
-    # GET/POST /cursos/{pk}
-    path('categorias/<pk>', views.AtualizaCategoriasView.as_view(), name="atualiza_categorias"),
+    # GET/POST /categorias/{pk}
+    #path('categorias/<pk>', views.AtualizaCategoriasView.as_view(), name="atualiza_categorias"),
 
-    # GET/POST /cursos/excluir/{pk}
-    path('categorias/excluir/<pk>', views.DeletaCategoriasView.as_view(), name="deleta_categorias"),
+    # GET/POST /categorias/excluir/{pk}
+    #path('categorias/excluir/<pk>', views.DeletaCategoriasView.as_view(), name="deleta_categorias"),
     
+    #------------------
+    # GET /estudante
+    path('estudante/', views.HomeEstudanteView.as_view(), name="index_estudante"),
+
+    # GET /estudante/cadastrar
+    path('estudante/cadastrar', views.CriaEstudanteView.as_view(), name="cadastra_estudante"),
+
+    # GET /estudante
+    path('estudante/lista', views.ListaEstudanteView.as_view(), name="lista_estudante"),
+
+    # GET/POST /estudante/{pk}
+    path('estudante/<pk>', views.AtualizaEstudanteView.as_view(), name="atualiza_estudante"),
+
+    # GET/POST /estudante/excluir/{pk}
+    path('estudante/excluir/<pk>', views.DeletaEstudanteView.as_view(), name="deleta_estudante"),
+
 ]

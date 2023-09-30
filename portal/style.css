@@ -9,20 +9,22 @@ body { /*especificações mínimas para a página do portal*/
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white; 
-  color: black; 
-  padding: 5px 5px; 
+  background-color: white;
+  color: black;
+  padding: 5px 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 100;
   position: fixed;
   width: 100%;
+  height: 80px;
   margin-top: -100px;
   height: 80px;
 }
 
 .menu {
   text-align: center;
+  margin-left: 40%;
 }
 
 .menu ul {
@@ -41,46 +43,99 @@ body { /*especificações mínimas para a página do portal*/
 
 .menu li:hover {
   background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
-.menu-icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  margin-top: 5px;
-  padding-left: 30px;
-  padding-right: 30px;
-  display: block; 
+.menu-item {
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.menu-item:hover .menu-text {
+  opacity: 1; /* Torna o texto visível quando o mouse passa sobre o item do menu */
+}
+
+.user {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.menu-icon { /*menu e conta do canto superior direito*/
+  width: 25px; 
+  height: 25px; 
+  margin-right: 10px; 
+}
+
+.menu-icon:hover { 
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
 }
 
 .menu-text {
-  display: none; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
 }
 
-.menu li:hover .menu-text {
-  display: block; 
+.botao-procurar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
 }
 
-.search input[type="text"] {
+.botao-procurar input[type="text"] {
   padding: 5px;
   border: none;
   border-radius: 5px;
   background-color: #F0F2F5;
+  margin-bottom: 5px;
 }
 
-.search button {
+.botao-procurar input:hover {
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+  border: black solid 1px;
+}
+
+.botao-procurar button {
   padding: 5px 10px;
-  background-color: #F0F2F5; 
+  background-color: #F0F2F5;
   border: none;
-  border-radius: 5px;
-  color: black; 
+  border-radius: 20px;
+  color: black;
   margin-left: 5px;
 }
 
+.botao-procurar button:hover {
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+  border: black solid 1px;
+}
+
 .user a {
-  margin-left: 20px; 
-  text-decoration: none;
-  color: black; 
+    margin-left: 10px; 
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;     
+}
+
+.menu-icon-dir { /*menu e conta do canto superior direito*/
+  width: 80px; 
+  height: 25px;  
+}
+
+.menu-icon-dir:hover { 
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+  padding: 10px;
 }
 /***********Cabeçalho fim************/
 /***********Menu Lateral início************/
@@ -135,6 +190,7 @@ body { /*especificações mínimas para a página do portal*/
 
 .post-card {
   border: 1px solid #ccc;
+  border-radius: 10px;
   margin-bottom: 30px;
   margin-left: 600px;
   margin-right: 250px;
@@ -165,23 +221,38 @@ body { /*especificações mínimas para a página do portal*/
 }
 
 .acoes-btn {
-  background-color: #007bff;
-  color: #fff;
+  flex-grow: 1; 
+  background-color: #F0F2F5;
+  padding: 10px; 
+  cursor: pointer; 
+  text-align: center; 
   border: none;
-  padding: 5px 10px;
-  cursor: pointer;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .like-btn {
-  background-color: #007bff;
+  background-color: white;
+  padding: 0px 10%;
+  flex-grow: 1;
 }
 
 .comentario-btn {
-  background-color: #28a745;
+  background-color: white;
+  padding: 0px 10%;
+  flex-grow: 1;
 }
 
 .compartilhar-btn {
-  background-color: #ffc107;
+  background-color: white;
+  padding: 0px 10%;
+  flex-grow: 1;
+}
+
+.acoes-btn:hover {
+  background-color: #f0f0f0; 
+  color: black;   
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 /***********Conteúdo de Postagens fim************/
 /***********Conteúdo da Classe Recarregar início************/

@@ -23,9 +23,9 @@ function carregarMaisPostagens() { /* Função que carrega novas postagens */
               <p>Conteúdo da nova postagem...</p>
             </div>
             <div class="post-acoes">
-              <button class="acoes-btn like-btn">Curtir</button>
-              <button class="acoes-btn comentario-btn">Comentar</button>
-              <button class="acoes-btn compartilhar-btn">Compartilhar</button>
+              <button class="acoes-btn like-btn"><img src="imagens/curtir.svg" alt="curtir">Curtir</button>
+              <button class="acoes-btn comentario-btn"><img src="imagens/comentar.svg" alt="comentar">Comentar</button>
+              <button class="acoes-btn compartilhar-btn"><img src="imagens/compartilhar.svg" alt="compartilhar">Compartilhar</button>
             </div>
           </div>
         `;

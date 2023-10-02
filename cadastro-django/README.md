@@ -1,23 +1,48 @@
-# Cursos Grátis Aqui Tem
+# Helloworld, Django
 
-Este é um projeto de desenvolvimento de um portal que tem como objetivo centralizar informações sobre cursos gratuitos disponíveis para a comunidade. Os usuários podem encontrar e visualizar informações sobre cursos, dar feedback e contribuir para sua divulgação.
+Código produzido como parte do artigo sobre Desenvolvimento Web com Django da Python Academy. 
+[Acesse aqui](https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-introducao) 
+e saiba mais!
 
-## Objetivo
+## Instalação
 
-O objetivo deste projeto é criar uma plataforma online que permita às instituições e organizações que oferecem cursos gratuitos compartilharem informações sobre seus cursos, facilitando o acesso da comunidade externa a essas oportunidades de aprendizado.
+Primeiro, recomenda-se a criação de um ambiente virtual. 
 
-## Tecnologias Utilizadas
+_Quer saber mais ambientes virtuais? Então [acesse o link para nosso post 
+sobre ambientes virtuais no Python](https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais)!_
 
-- Framework web: Django
-- Frontend: HTML, CSS, JavaScript
-- Banco de dados: SQLite
-- Controle de versão: Git
-- Hospedagem: Hostinger
+Com seu ambiente virtual configurado, instale as dependências do projeto com:
 
-## Licença
+```bash
+pip install -r requirements.txt
+```
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE.md para obter detalhes.
+Para criar as _Migrations_:
 
-## Progresso Atual
+```bash
+python manage.py makemigrations
+```
 
-Atualmente, estamos na fase inicial do desenvolvimento, criando a estrutura base do portal e definindo os requisitos essenciais.
+Para efetivar as _Migrations_ no banco de dados:
+
+```bash
+python manage.py migrate
+```
+
+## Execução
+
+Para executar o servidor de testes do Django, execute:
+
+```bash
+python manage.py runserver
+```
+
+## Fique por dentro
+
+Se gostou do conteúdo, siga a Python Academy no nosso blog e redes sociais!
+
+- [Site](https://pythonacademy.com.br)
+- [Facebook](https://facebook.com.br/pythonacademy/)
+- [Blog](https://pythonacademy.com.br/blog/)
+
+E até a próxima!

@@ -29,7 +29,7 @@ class InsereInstituicaoForm(forms.ModelForm):
 # -------------------------------------------
 
 class InsereCursosForm(forms.ModelForm):
-    nome = forms.CharField (
+    nome = forms.CharField(
         label = 'Nome',
         required = True,
         widget = forms.Textarea
@@ -47,6 +47,12 @@ class InsereCursosForm(forms.ModelForm):
         widget=forms.Textarea
     )
 
+    inscricao = forms.DateField(
+        label='inscricao',
+        required=True,
+        widget=forms.SelectDateWidget()
+    )
+    
     class Meta:
         # Modelo base
         model = Cursos
@@ -55,7 +61,8 @@ class InsereCursosForm(forms.ModelForm):
         fields = [
             'nome',
             'descricao',
-            'categoria'
+            'categoria',
+            'inscricao'
         ]
 
 
@@ -90,6 +97,12 @@ class InsereCursosForm(forms.ModelForm):
 # -------------------------------------------
 
 class InsereEstudanteForm(forms.ModelForm):
+    
+    data_nascimento = forms.DateField(
+        label='nascimento',
+        required=True,
+        widget=forms.SelectDateWidget()
+    )
 
     class Meta:
         # Modelo base

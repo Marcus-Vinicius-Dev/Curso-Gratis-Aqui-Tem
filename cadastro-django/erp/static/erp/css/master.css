@@ -43,10 +43,23 @@ body{
     width: 100%;
     height: 100%;
 }
+span.input-group-text{
+    font-weight: bold;
+}
+.mb-3{
+    margin-bottom: 0.3rem!important;
+}
 .mb-5{
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 0.2rem!important;
+    /*margin-bottom: 0.2rem!important;*/
+}
+.mt-5{
+    font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
+    width:80%;
+}
+.col-sm-12{
+    margin-bottom: 10px;
 }
 button.login{
     display: inline-grid;
@@ -87,9 +100,35 @@ a.logout{
     color: #98FB98;
 }
 #id_nome, #id_descricao,
-#id_categoria{
+#id_categoria, #id_inscricao{
     height:40px;
 }
+#id_data_nascimento_day,
+#id_data_nascimento_month,
+#id_data_nascimento_year,
+#id_inscricao_day,
+#id_inscricao_month,
+#id_inscricao_year
+{
+    text-align: center;
+    font-weight: bold;
+}
+form{
+    margin-top: -20px;
+    padding: 0;
+}
+.card-title{
+    margin-bottom: 25px;
+    padding: 10px;
+    font-weight: bold;
+    color: red;
+}
+/*.row{
+    width: 60%;
+}
+.input-group.mb-3{
+    width: 50%;
+}*/
 .card-body{
     padding: 8px;
 }

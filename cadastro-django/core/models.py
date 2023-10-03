@@ -84,8 +84,12 @@ class Cursos(models.Model):
         null=True,
         blank=True
     )
-
-
+    
+    inscricao = models.DateField(
+        null=True,
+        blank=True
+    )
+    
     objetos = models.Manager()
 
     def __str__(self):

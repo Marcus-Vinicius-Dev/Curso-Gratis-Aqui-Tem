@@ -36,6 +36,12 @@
                                 {% render_field form.categoria class+="form-control" %}
                             </div>
 
+                            <!-- Período de inscrições-->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Inscrições até:</span>
+                                {% render_field form.inscricao class+="form-control" %}
+                            </div>
+
                             <hr>
                             <div class="text-end">
                                 <a href="{% url 'erp:index' %}" class="btn btn-outline-primary">Voltar</a>

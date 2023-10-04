@@ -5,6 +5,8 @@ from django.contrib.auth import views as auth_views
 app_name = 'erp'
 
 urlpatterns = [
+    #  URL que corresponde à view de registro
+    path('registro/', views.registro, name='registro'),
     # GET /index
     path('', views.HomeView.as_view(), name="index"),
     

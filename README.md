@@ -21,4 +21,3 @@ Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE.md 
 ## Progresso Atual
 
 Atualmente, estamos na fase inicial do desenvolvimento, criando a estrutura base do portal e definindo os requisitos essenciais.
-

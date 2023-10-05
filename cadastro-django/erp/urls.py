@@ -2,6 +2,7 @@ from django.urls import path
 from erp import views
 from django.contrib.auth import views as auth_views
 from . import views #adicionado para importar o site portal
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns#adicionado para importar o site portal
 
 app_name = 'erp'
 
@@ -84,3 +85,5 @@ urlpatterns = [
     path('estudante/excluir/<pk>', views.DeletaEstudanteView.as_view(), name="deleta_estudante"),
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()

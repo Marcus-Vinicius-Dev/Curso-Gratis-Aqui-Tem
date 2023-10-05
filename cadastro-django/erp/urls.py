@@ -1,12 +1,17 @@
 from django.urls import path
 from erp import views
 from django.contrib.auth import views as auth_views
+from . import views #adicionado para importar o site portal
 
 app_name = 'erp'
 
 urlpatterns = [
+    #  URL que corresponde à view do site portal
+    path('', views.portal_index, name='portal_index'),
+
     #  URL que corresponde à view de registro
     path('registro/', views.registro, name='registro'),
+
     # GET /index
     path('', views.HomeView.as_view(), name="index"),
     

@@ -12,6 +12,7 @@ from .forms import UserRegistrationForm  # Importa o novo formulário de registr
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
+from django.shortcuts import render
 
 def registro(request):
     if request.method == 'POST':
@@ -235,3 +236,6 @@ class DeletaEstudanteView(DeleteView):
     context_object_name = 'estudante'
     success_url = reverse_lazy("erp:lista_estudante")
 
+# para renderizar o portal 
+def portal_index(request):
+    return render(request, 'portal/index.html')

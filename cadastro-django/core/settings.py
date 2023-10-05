@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'core',
-    'erp'
+    'erp',
+    'portal',
 ]
 
 MIDDLEWARE = [

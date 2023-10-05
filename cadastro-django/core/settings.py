@@ -1,3 +1,4 @@
+import os #acrescentado para integrar formulários
 from pathlib import Path
 
 # Diretório raíz
@@ -84,6 +85,9 @@ USE_TZ = True
 
 # Arquivos estáticos
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [ #adicionado para integrar formulários
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Tipo padrão das chaves primárias
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

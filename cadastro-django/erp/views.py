@@ -6,29 +6,33 @@ from erp.forms import InsereInstituicaoForm, InsereCursosForm, InsereEstudanteFo
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+from .forms import UserRegistrationForm  # Importa o novo formulário de registro
 
-################## Renderiza a página de registro ##########################
+################## Início de Renderiza a página de registro ##########################
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import SeuFormularioDeRegistro  # Importe o formulário de registro adequado
 
 def registro(request):
     if request.method == 'POST':
-        form = SeuFormularioDeRegistro(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Faça login automaticamente após o registro
+            # Faz login automaticamente após o registro
             login(request, user)
-            return redirect('erp:index')  # Redirecione para a página inicial após o registro
+            return redirect('erp:index')  # Redireciona para a página inicial após o registro
     else:
-        form = SeuFormularioDeRegistro()
+        form = UserRegistrationForm()
     return render(request, 'registration.html', {'form': form})
 
-################## Renderiza a página de registro ##########################
+################## Fim de Renderiza a página de registro ##########################
 
-def index(request):
-    return render(request, '../templates/index.html')
+def index(request): # Se o usuário estiver autenticado, renderiza a página inicial
+    if request.user.is_authenticated:
+        return render(request, 'erp/index.html') # Caso contrário, redireciona para a página de login ou qualquer outra página apropriada
+    else:
+        return redirect('erp:login')  # Redireciona para a página de login ou substitua pelo URL apropriado
+
 
 # PÁGINA PRINCIPAL
 # ----------------------------------------------

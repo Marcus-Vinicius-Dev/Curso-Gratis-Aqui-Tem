@@ -1,6 +1,6 @@
-from core.models import Instituicao, Cursos, Estudante
+from core.models import Instituicao, Cursos, Estudante, Usuario
 from django import forms
-
+from django.contrib.auth.forms import UserCreationForm #acrescentado para o forms de criação de conta
 
 # FORMULÁRIO DE INCLUSÃO DE INSTITUICÕES
 # -------------------------------------------
@@ -118,4 +118,12 @@ class InsereEstudanteForm(forms.ModelForm):
             'sexo'
         ]
 
+#---------------------
+# FORMULÁRIO DE CRIAÇÃO DE CONTAS
+# -------------------------------------------
+
+class UserRegistrationForm(UserCreationForm):
+    class Meta:
+        model = Usuario  
+        fields = ('username', 'password1', 'password2')
 

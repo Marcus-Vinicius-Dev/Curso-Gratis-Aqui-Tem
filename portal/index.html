@@ -55,7 +55,26 @@
             <li><img src="imagens/graduation.svg" alt="ícone de graduação para busca de cursos por área"> Estudantes</li>
             <li><img src="imagens/glass.svg" alt="ícone de lupa para busca geral"> Busca</li>
             <li><img src="imagens/login.svg" alt="ícone de login"> Login</li>
+            <a href="{% url 'erp:registro' %}">Página de Registro</a>
         </ul>
+    
+    <!--Início do conteúdo do modal de registro-->
+
+    <div id="registroModal" class="modal">
+        <div class="modal-content">
+          <!-- Conteúdo do formulário de registro -->
+          <form method="POST" action="{% url 'erp:registro' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrar</button>
+          </form>
+          <!-- Botão para fechar o modal -->
+          <button id="fecharModal" class="fechar-btn">Fechar</button>
+        </div>
+      </div>
+
+    <!--Fim do conteúdo do modal de registro-->
+
     </aside>
 
 <!--*******************Menu Lateral fim*******************--> 

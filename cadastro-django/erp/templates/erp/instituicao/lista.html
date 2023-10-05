@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card border-dark" data-aos="fade-in" data-aos-duration="750">
-                    <div class="card-header"><b>Lista de Instituições Cadastradas</b></div>
+                    <div class="card-header"><b>Instituições Cadastradas</b></div>
                     <div class="card-body">
                         {% if instituicao|length > 0 %}
                             <!--<p class="card-text">Aqui está a lista de <code>Instituicao</code> cadastradas.</p>-->
@@ -23,8 +23,8 @@
                                         <th scope="col">CEP</th>
                                         <th scope="col">Cidade</th>
                                         <th scope="col">UF</th>
-                                        <th scope="col">Tel/WhatsApp</th>
-                                        <th scope="col">E-mail</th>
+                                        <!--<th scope="col">Tel/WhatsApp</th>
+                                        <th scope="col">E-mail</th>-->
                                         <th scope="col">Site</th>
                                         <th scope="col" class="text-center">Ações</th>
                                     </tr>
@@ -38,8 +38,8 @@
                                             <td>{{ instituicao.cep }}</td>
                                             <td>{{ instituicao.cidade }}</td>
                                             <td>{{ instituicao.uf }}</td>
-                                            <td>{{ instituicao.telefone }}</td>
-                                            <td>{{ instituicao.email }}</td>
+                                            <!--<td>{{ instituicao.telefone }}</td>
+                                            <td>{{ instituicao.email }}</td>-->
                                             <td>{{ instituicao.site }}</td>
                                             <td class="text-center">
                                                 <a href="{% url 'erp:atualiza_instituicao' pk=instituicao.id %}"

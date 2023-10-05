@@ -52,6 +52,32 @@ function detectorDeRolagem() { //Nova função
     }
   });
 }
+//*************** Início da Função Modal de Registro ***************
+
+// Função para exibir o modal
+function abrirModal() {
+  document.getElementById('registroModal').style.display = 'block';
+}
+
+// Função para fechar o modal
+function fecharModal() {
+  document.getElementById('registroModal').style.display = 'none';
+}
+
+// Evento para abrir o modal quando o ícone de conta é clicado
+document.querySelector('.menu-icon-dir').addEventListener('click', abrirModal);
+
+// Evento para fechar o modal quando o botão "Fechar" é clicado
+document.getElementById('fecharModal').addEventListener('click', fecharModal);
+
+// Evento para fechar o modal quando a área escura fora do modal é clicada
+window.addEventListener('click', function (event) {
+  if (event.target === document.getElementById('registroModal')) {
+    fecharModal();
+  }
+});
+
+//*************** Fim da Função Modal de Registro ***************
 
 // Inicialize a detecção de rolagem
 detectorDeRolagem();

@@ -2,8 +2,9 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class Usuario(AbstractUser):
-    pass
+class Usuario(AbstractUser): #campos booleanos que indicam se um usuário é uma instituição ou um estudante, respectivamente. Esses campos permitem diferenciar entre os dois tipos de usuários do aplicativo.
+    is_institution = models.BooleanField(default=False)
+    is_student = models.BooleanField(default=False)
 
 class Instituicao(models.Model):
     #cnpj = models.CharField(
@@ -84,8 +85,12 @@ class Cursos(models.Model):
         null=True,
         blank=True
     )
-
-
+    
+    inscricao = models.DateField(
+        null=True,
+        blank=True
+    )
+    
     objetos = models.Manager()
 
     def __str__(self):

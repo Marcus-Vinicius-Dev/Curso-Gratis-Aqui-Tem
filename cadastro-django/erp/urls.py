@@ -7,9 +7,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns#adicionado p
 app_name = 'erp'
 
 urlpatterns = [
-    #  URL que corresponde à view do site portal
-    path('', views.portal_index, name='portal_index'),
-
     #  URL que corresponde à view de registro
     path('registro/', views.registro, name='registro'),
 

@@ -42,12 +42,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-AUTH_USER_MODEL = 'core.Usuario'
+AUTH_USER_MODEL = 'portal.Usuario'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'portal', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -55,7 +55,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                os.path.join(BASE_DIR, 'portal', 'templates'), #adicionado para rodar o portal
             ],
         },
     },

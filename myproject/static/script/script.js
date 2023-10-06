@@ -18,16 +18,16 @@ function carregarMaisPostagens() { /* Função que carrega novas postagens */
         novoPost += /* novoPost se refere ao trecho abaixo copiado de index.html em que += acrescenta o conteúdo abaixo conforme a quantidade de loop */
           `
           <div class="post-card">
-            <div class="post-conteudo">
-                <img src="{% static 'imagens/curso.png' %}" alt="imagem do curso">
-                <p>Conteúdo da postagem...</p>
-            </div>
-            <div class="post-acoes">
-                <button class="acoes-btn like-btn"><img src="{% static 'imagens/curtir.svg' %}" alt="ícone de curtir">Curtir</button>
-                <button class="acoes-btn comentario-btn"><img src="{% static 'imagens/comentar.svg' %}" alt="ícone de comentar">Comentar</button>
-                <button class="acoes-btn compartilhar-btn"><img src="{% static 'imagens/compartilhar.svg' %}" alt="ícone de compartilhar">Compartilhar</button>
-            </div>
-          </div> 
+          <div class="post-conteudo">
+              <img src="static/imagens/curso.png" alt="imagem do curso">
+              <p>Conteúdo da postagem...</p>
+          </div>
+          <div class="post-acoes">
+              <button class="acoes-btn like-btn"><img src="static/imagens/curtir.svg" alt="ícone de curtir">Curtir</button>
+              <button class="acoes-btn comentario-btn"><img src="static/imagens/comentar.svg" alt="ícone de comentar">Comentar</button>
+              <button class="acoes-btn compartilhar-btn"><img src="static/imagens/compartilhar.svg" alt="ícone de compartilhar">Compartilhar</button>
+          </div>
+      </div>
         `;
       }
     

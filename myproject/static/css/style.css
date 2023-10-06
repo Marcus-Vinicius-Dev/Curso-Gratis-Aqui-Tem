@@ -54,15 +54,9 @@ body { /*especificações mínimas para a página do portal*/
     padding: 10px;
   }
   
-  .menu-item:hover .menu-text {
+.menu-item:hover .menu-text {
     opacity: 1; /* Torna o texto visível quando o mouse passa sobre o item do menu */
-  }
-  
-  .user {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-  }
+}
   
   .menu-icon { /*menu e conta do canto superior direito*/
     width: 25px; 
@@ -125,11 +119,68 @@ body { /*especificações mínimas para a página do portal*/
       text-decoration: none;
       color: black;     
   }
-  
-  .menu-icon-dir { /*menu e conta do canto superior direito*/
-    width: 80px; 
-    height: 25px;  
-  }
+
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s;
+  margin-left: 15px; 
+  margin-right: 15px; 
+  cursor: pointer;
+}
+
+
+.user-icon:hover {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icon-container:hover .user-text {
+  opacity: 1;
+  display: block;
+}
+
+.menu-icon-dir {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+.user-text {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 5px;
+  white-space: nowrap;
+  display: none;
+}
+
+.user-icon:hover .user-text {
+  opacity: 1;
+  display: block;
+}
   
   .menu-icon-dir:hover { 
     background-color: #f0f0f0; 

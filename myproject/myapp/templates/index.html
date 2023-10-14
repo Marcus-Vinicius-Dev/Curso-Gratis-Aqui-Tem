@@ -28,8 +28,10 @@
                     </li>
                     <li>
                         <div class="menu-item">
-                            <img src="{% static 'imagens/conta.svg' %}" alt="ícone de livro" class="menu-icon">
-                            <span class="menu-text">Conta</span>
+                            <a href="{% url 'cadastro_instituicao' %}" target="_blank"> 
+                                <img src="{% static 'imagens/conta.svg' %}" alt="ícone de livro" class="menu-icon">
+                                <span class="menu-text">Conta</span>
+                            </a>
                         </div>
                     </li>
                 </ul>

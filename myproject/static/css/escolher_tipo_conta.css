@@ -1,0 +1,75 @@
+body {
+    margin: 0; /* Remove margens padrão do corpo da página */
+    padding: 0; /* Remova o preenchimento padrão do corpo da página */
+    background-image: url('caminho/para/sua/imagem.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; /* Fixa o cabeçalho no topo da janela de visualização */
+    width: 100%; /* Define a largura total */
+    top: 0; /* Cola o cabeçalho no topo */
+}
+
+header img {
+    height: 40px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    text-align: center;
+    padding: 60px 20px 80px 20px; /* Aumenta o preenchimento superior e inferior para evitar sobreposição com cabeçalho e rodapé */
+}
+
+h1 {
+    color: black;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card a {
+    display: block;
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; /* Fixa o rodapé na base da janela de visualização */
+    width: 100%; /* Define a largura total */
+    bottom: 0; /* Cola o rodapé na base */
+}

@@ -1,14 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Escolher Tipo de Conta</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/escolher_tipo_conta.css' %}">
 </head>
 <body>
-    <h1>Escolha o Tipo de Conta</h1>
-    <p>Por favor, escolha o tipo de conta que deseja criar:</p>
-    <ul>
-        <li><a href="{% url 'cadastro_instituicao' %}">Conta Institucional</a></li>
-        <li><a href="{% url 'cadastro_estudante' %}">Conta de Estudante</a></li>
-    </ul>
+    <header>
+        <img src="caminho/para/seu/logotipo.png" alt="Logo">
+        <a href="#">Home</a>
+        <a href="#">Sair</a>
+    </header>
+
+    <main>
+        <h1>Você gostaria de criar qual tipo de conta?</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Instituição</h2>
+                <a href="{% url 'cadastro_instituicao' %}">Criar Conta de Instituição</a>
+            </div>
+            <div class="card">
+                <h2>Estudante</h2>
+                <a href="{% url 'cadastro_estudante' %}">Criar Conta de Estudante</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2021-2023 Inc. All rights reserved. UNIVESP PI-II Turma-004 - BTI</div>
+        <div>Hora: <span id="current-time"></span></div>
+    </footer>
+
+    <script>
+        // JavaScript para mostrar a hora atual
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        // Atualiza a hora a cada segundo
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>

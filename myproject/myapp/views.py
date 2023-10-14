@@ -26,5 +26,8 @@ def cadastro_estudante(request):
         form = CadastroEstudanteForm()
     return render(request, 'conta/cadastro_estudante.html', {'form': form})
 
+def escolher_tipo_conta(request):
+    return render(request, 'conta/escolher_tipo_conta.html')
+
 def sucesso(request):
     return render(request, 'conta/sucesso.html')

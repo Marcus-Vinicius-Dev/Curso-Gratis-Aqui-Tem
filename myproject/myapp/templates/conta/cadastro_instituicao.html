@@ -1,8 +1,9 @@
+{% extends "base.html" %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Escolha sua Conta</title>
+    <title>Cadastro Instituição</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_instituicao.css' %}">
 </head>
 <body>
@@ -13,17 +14,37 @@
     </header>
 
     <main>
-        <h1>Você gostaria de criar qual tipo de conta?</h1>
-        <div class="cards">
-            <div class="card">
-                <h2>Instituição</h2>
-                <a href="{% url 'cadastro_instituicao' %}">Criar Conta de Instituição</a>
-            </div>
-            <div class="card">
-                <h2>Estudante</h2>
-                <a href="{% url 'cadastro_estudante' %}">Criar Conta de Estudante</a>
-            </div>
-        </div>
+        {% block content %}
+        <h1>Cadastro de Instituição</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_nome">Nome:</label>
+            <input type="text" name="nome" id="id_nome" required><br>
+
+            <label for="id_cep">CEP:</label>
+            <input type="text" name="cep" id="id_cep" required><br>
+
+            <label for="id_endereco">Endereço:</label>
+            <input type="text" name="endereco" id="id_endereco" required><br>
+
+            <label for="id_cidade">Cidade:</label>
+            <input type="text" name="cidade" id="id_cidade" required><br>
+
+            <label for="id_uf">UF:</label>
+            <input type="text" name="uf" id="id_uf" required><br>
+
+            <label for="id_telefone">Telefone:</label>
+            <input type="text" name="telefone" id="id_telefone" required><br>
+
+            <label for="id_email">E-mail:</label>
+            <input type="email" name="email" id="id_email" required><br>
+
+            <label for="id_site">Site:</label>
+            <input type="url" name="site" id="id_site" required><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        {% endblock %}
     </main>
 
     <footer>
@@ -32,7 +53,7 @@
     </footer>
 
     <script>
-        // JavaScript para mostrar a hora atual
+        
         function updateTime() {
             const now = new Date();
             const hours = now.getHours();
@@ -40,8 +61,6 @@
             const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
             document.getElementById('current-time').textContent = timeString;
         }
-
-        // Atualiza a hora a cada segundo
         updateTime();
         setInterval(updateTime, 1000);
     </script>

@@ -1,9 +1,13 @@
 body {
-    margin: 0; /* Remove margens padrão do corpo da página */
-    padding: 0; /* Remova o preenchimento padrão do corpo da página */
+    margin: 0; 
+    padding: 0; 
     background-image: url('caminho/para/sua/imagem.jpg');
     background-size: cover;
     font-family: Arial, sans-serif;
+}
+
+header * {
+    margin-right: 0;
 }
 
 header {
@@ -13,18 +17,31 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    position: fixed; /* Fixa o cabeçalho no topo da janela de visualização */
-    width: 100%; /* Define a largura total */
-    top: 0; /* Cola o cabeçalho no topo */
+    position: fixed; 
+    width: 100%; 
+    max-width: 100%;
+    top: 0; 
+    overflow: hidden;
 }
 
 header img {
     height: 40px;
 }
 
+.logo img {
+    max-width: 200px;
+    height: auto;
+  }
+
 header a {
     color: #fff;
     text-decoration: none;
+    margin-right: 20px;
+}
+
+#sair {
+    margin-right: 30px; 
+    white-space: nowrap;
 }
 
 main {
@@ -69,7 +86,11 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    position: fixed; /* Fixa o rodapé na base da janela de visualização */
-    width: 100%; /* Define a largura total */
-    bottom: 0; /* Cola o rodapé na base */
+    position: fixed; 
+    width: 100%; 
+    bottom: 0; 
+}
+
+#current-time {
+    margin-right: 30px;
 }

@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Escolher Tipo de Conta</title>
+    <title>Escolha sua Conta</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/escolher_tipo_conta.css' %}">
 </head>
 <body>
     <header>
-        <img src="{% static 'imagens/logo.png' %}" alt="ícone de logotipo" class="menu-icon">
+        <a href="{% url 'home' %}"><img src="{% static 'imagens/logo.png' %}" alt="ícone de logotipo" class="menu-icon"></a>
         <a href="#">Home</a>
         <a href="#" id="sair">Sair</a>
     </header>

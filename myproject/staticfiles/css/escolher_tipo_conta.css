@@ -1,9 +1,9 @@
 body {
     margin: 0; 
     padding: 0; 
-    background-image: url('../imagens/relogio2.jpg');
+    background-image: url('{% static "imagens/relogio.jpg" %}');
     background-size: cover;
-    font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 header * {
@@ -42,7 +42,6 @@ header a {
 #sair {
     margin-right: 30px; 
     white-space: nowrap;
-    color: red;
 }
 
 main {
@@ -73,7 +72,7 @@ h1 {
 .card a {
     display: block;
     margin-top: 10px;
-    background-color: #0c6eff;
+    background-color: #000;
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;

@@ -1,9 +1,11 @@
-{% extends "conta/common.html" %}
 {% load static %}
+{% block additional_css %}{% endblock %}
+{% block header %}{% endblock %}
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Escolha sua Conta{% endblock %}</title>
+    <title>{% block title %}Título Padrão{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/escolher_tipo_conta.css' %}">
 </head>
 <body>
@@ -14,19 +16,7 @@
     </header>
 
     <main>
-        {% block content %}
-        <h1>Você gostaria de criar qual tipo de conta?</h1>
-        <div class="cards">
-            <div class="card">
-                <h2>Instituição</h2>
-                <a href="{% url 'cadastro_instituicao' %}">Criar Conta de Instituição</a>
-            </div>
-            <div class="card">
-                <h2>Estudante</h2>
-                <a href="{% url 'cadastro_estudante' %}">Criar Conta de Estudante</a>
-            </div>
-        </div>
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
 
     <footer>

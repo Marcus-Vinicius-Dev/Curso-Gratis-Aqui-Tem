@@ -3,8 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro Instituição</title>
+    {% block title %}Cadastro Instituição{% endblock %}
+    {% block additional_css %}
+    {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_instituicao.css' %}">
+    {% endblock %}
 </head>
 <body>
     <header>
@@ -15,6 +18,7 @@
 
     <main>
         {% block content %}
+        {{ block.super }}
         <h1>Cadastro de Instituição</h1>
         <form method="post">
             {% csrf_token %}

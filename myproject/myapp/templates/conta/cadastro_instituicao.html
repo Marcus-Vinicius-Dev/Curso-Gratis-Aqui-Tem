@@ -19,35 +19,37 @@
     <main>
         {% block content %}
         {{ block.super }}
-        <h1>Cadastro de Instituição</h1>
-        <form method="post">
-            {% csrf_token %}
-            <label for="id_nome">Nome:</label>
-            <input type="text" name="nome" id="id_nome" required><br>
+        <div class="card">
+            <h1>Cadastro de Instituição</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="id_nome">Nome:</label>
+                <input type="text" name="nome" id="id_nome" required><br>
 
-            <label for="id_cep">CEP:</label>
-            <input type="text" name="cep" id="id_cep" required><br>
+                <label for="id_cep">CEP:</label>
+                <input type="text" name="cep" id="id_cep" required><br>
 
-            <label for="id_endereco">Endereço:</label>
-            <input type="text" name="endereco" id="id_endereco" required><br>
+                <label for="id_endereco">Endereço:</label>
+                <input type="text" name="endereco" id="id_endereco" required><br>
 
-            <label for="id_cidade">Cidade:</label>
-            <input type="text" name="cidade" id="id_cidade" required><br>
+                <label for="id_cidade">Cidade:</label>
+                <input type="text" name="cidade" id="id_cidade" required><br>
 
-            <label for="id_uf">UF:</label>
-            <input type="text" name="uf" id="id_uf" required><br>
+                <label for="id_uf">UF:</label>
+                <input type="text" name="uf" id="id_uf" required><br>
 
-            <label for="id_telefone">Telefone:</label>
-            <input type="text" name="telefone" id="id_telefone" required><br>
+                <label for="id_telefone">Telefone:</label>
+                <input type="text" name="telefone" id="id_telefone" required><br>
 
-            <label for="id_email">E-mail:</label>
-            <input type="email" name="email" id="id_email" required><br>
+                <label for="id_email">E-mail:</label>
+                <input type="email" name="email" id="id_email" required><br>
 
-            <label for="id_site">Site:</label>
-            <input type="url" name="site" id="id_site" required><br>
+                <label for="id_site">Site:</label>
+                <input type="url" name="site" id="id_site" required><br>
 
-            <button type="submit">Cadastrar</button>
-        </form>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
         {% endblock %}
     </main>
 

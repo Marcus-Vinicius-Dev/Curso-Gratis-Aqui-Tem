@@ -26,8 +26,21 @@
                 <label for="id_nome">Nome:</label>
                 <input type="text" name="nome" id="id_nome" required><br>
 
-                <label for="id_cep">Data de Nascimento:</label>
-                <input type="text" name="cep" id="id_cep" required><br>
+                <label>Data de Nascimento:</label>
+                <div class="date-of-birth">
+                    <select name="dia">
+                        <option value="">Dia</option>
+                        <!-- Adicione opções para os dias aqui, por exemplo, de 1 a 31 -->
+                    </select>
+                    <select name="mes">
+                        <option value="">Mês</option>
+                        <!-- Adicione opções para os meses aqui, por exemplo, de janeiro a dezembro -->
+                    </select>
+                    <select name="ano">
+                        <option value="">Ano</option>
+                        <!-- Adicione opções para os anos aqui, por exemplo, de 1900 a 2023 -->
+                    </select>
+                </div>
 
                 <label for="id_telefone">Telefone/Whats:</label>
                 <input type="text" name="telefone" id="id_telefone" required><br>

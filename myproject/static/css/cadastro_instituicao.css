@@ -54,30 +54,64 @@ h1 {
     color: black;
 }
 
-.cards {
-    display: flex;
-    justify-content: center;
-}
-
-.card {
+main .card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    margin: 10px;
-    width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    height: 70%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+main .card h1 {
+    color: red;
+    text-align: left;
+}
+
+main .card form {
+    text-align: left;
+    position: relative;
+}
+
+main .card label {
+    background-color: #f8f9fb;
+    display: block;
+}
+
+main .card input {
+    width: 100%; 
+    padding: 5px; 
+}
+
+main .card .link-voltar {
+    background-color: #fff; 
+    color: #136bf9; 
+    border: 1px solid #136bf9;     
+    cursor: pointer;
+    border-radius: 5px; 
+    text-decoration: none; 
+    display: inline-block;
+    float: right;
     text-align: center;
 }
 
-.card a {
-    display: block;
-    margin-top: 10px;
-    background-color: #0c6eff;
+main .card #enviar {
+    background-color: #136bf9;
     color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
+    border-color: #136bf9;    
     border-radius: 5px;
+    float: right; 
+    margin: 10px;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+    font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer {

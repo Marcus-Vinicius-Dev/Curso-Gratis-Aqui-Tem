@@ -47,7 +47,9 @@
                 <label for="id_site">Site:</label>
                 <input type="url" name="site" id="id_site" required><br>
 
-                <button type="submit">Cadastrar</button>
+                <button type="submit" id="enviar">Enviar</button>
+                <a href="{% url 'escolher_tipo_conta' %}" class="link-voltar">Voltar</a>
+
             </form>
         </div>
         {% endblock %}
@@ -59,7 +61,7 @@
     </footer>
 
     <script>
-        
+/********* Inicio da Função do tempo no canto direito da tela **********/
         function updateTime() {
             const now = new Date();
             const hours = now.getHours();
@@ -69,6 +71,7 @@
         }
         updateTime();
         setInterval(updateTime, 1000);
+/********* Fim da Função do tempo no canto direito da tela **********/
     </script>
 </body>
 </html>

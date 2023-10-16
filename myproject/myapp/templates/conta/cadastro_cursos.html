@@ -6,7 +6,7 @@
     {% block title %}Cadastro de Cursos{% endblock %}
     {% block additional_css %}
     {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_estudante.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_cursos.css' %}">
     {% endblock %}
 </head>
 <body>
@@ -26,24 +26,21 @@
                 <label for="id_nome">Nome:</label>
                 <input type="text" name="nome" id="id_nome" required><br>
 
-                <label for="id_data_nascimento">Data de Nascimento:</label>
+                <label for="id_telefone">Descrição:</label>
+                <input type="text" name="telefone" id="id_telefone" required><br>
+
+                <label for="id_email">Categoria:</label>
+                <input type="email" name="email" id="id_email" required><br>
+
+                <label for="id_data_nascimento">Inscrição até:</label>
                 <div class="data-nascimento">
                     <input type="text" name="dia" id="id_dia" placeholder="Dia" required style="display: inline-block; width: 30%;">
                     <input type="text" name="mes" id="id_mes" placeholder="Mês" required style="display: inline-block; width: 30%;">
                     <input type="text" name="ano" id="id_ano" placeholder="Ano" required style="display: inline-block; width: 30%;">
                 </div>
 
-                <label for="id_telefone">Telefone/Whats:</label>
-                <input type="text" name="telefone" id="id_telefone" required><br>
-
-                <label for="id_email">E-mail:</label>
-                <input type="email" name="email" id="id_email" required><br>
-
-                <label for="id_site">Sexo:</label>
-                <input type="url" name="site" id="id_site" required><br>
-
                 <button type="submit" id="enviar">Enviar</button>
-                <a href="{% url 'escolher_tipo_conta' %}" class="link-voltar">Voltar</a>
+                <a href="{% url 'cadastro_instituicao' %}" class="link-voltar">Voltar</a>
 
             </form>
         </div>

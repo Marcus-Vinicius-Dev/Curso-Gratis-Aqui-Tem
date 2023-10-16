@@ -31,3 +31,6 @@ def escolher_tipo_conta(request):
 
 def sucesso(request):
     return render(request, 'conta/sucesso.html')
+
+def cadastro_cursos_view(request):
+    return render(request, 'conta/cadastro_cursos.html')

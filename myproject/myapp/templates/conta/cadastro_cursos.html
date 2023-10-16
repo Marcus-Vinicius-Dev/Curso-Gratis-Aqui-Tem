@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% block title %}Cadastro de Estudantes{% endblock %}
+    {% block title %}Cadastro de Cursos{% endblock %}
     {% block additional_css %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_estudante.css' %}">
@@ -20,7 +20,7 @@
         {% block content %}
         {{ block.super }}
         <div class="card">
-            <h1>Cadastro de Estudantes</h1>
+            <h1>Cadastro de Cursos</h1>
             <form method="post">
                 {% csrf_token %}
                 <label for="id_nome">Nome:</label>

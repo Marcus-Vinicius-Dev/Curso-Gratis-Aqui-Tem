@@ -181,40 +181,6 @@ body { /*especificações mínimas para a página do portal*/
   height: 25px; 
   margin-right: 10px; 
 }
-/* Estilos para o modal */
-.modal {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000; 
-}
-
-.modal-content {
-  background-color: white;
-  width: 80%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Estilos para o botão de fechar */
-.fechar-btn {
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 10px;
-  cursor: pointer;
-}
 
 /***********Menu Lateral fim************/
 /***********Conteúdo de Postagens início************/

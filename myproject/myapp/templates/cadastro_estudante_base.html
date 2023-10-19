@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title %}Título Padrão{% endblock %}
+    {% block additional_css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/cadastro_estudante.css' %}">
+    {% endblock %}
+
+</head>
+<body>
+    <header>
+       
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+       
+    </footer>
+</body>
+</html>

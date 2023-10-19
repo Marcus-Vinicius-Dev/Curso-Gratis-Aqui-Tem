@@ -101,10 +101,23 @@ main .card .link-voltar {
     text-align: center;
 }
 
-main .card #enviar {
+main .card .link-proximo {
     background-color: #136bf9;
     color: #fff;
     border-color: #136bf9;    
+    border-radius: 5px;
+    float: right; 
+    margin: 10px;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+    font-family: 'Courier New', Courier, monospace, Montserrat, Robot, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main .card .botao-cadastrar {
+    background-color: green;
+    color: #fff;
+    border-color: green;    
     border-radius: 5px;
     float: right; 
     margin: 10px;

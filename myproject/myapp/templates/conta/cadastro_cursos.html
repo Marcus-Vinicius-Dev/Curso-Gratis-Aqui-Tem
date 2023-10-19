@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title %}Cadastro de Cursos{% endblock %}
+    {% block additional_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro_cursos.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}"><img src="{% static 'imagens/logo.png' %}" alt="ícone de logotipo" class="menu-icon"></a>
+        <a href="#">Home</a>
+        <a href="#" id="sair">Sair</a>
+    </header>
+
+    <main>
+        {% block content %}
+        {{ block.super }}
+        <div class="card">
+            <h1>Cadastro de Cursos</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="id_nome">Nome:</label>
+                <input type="text" name="nome" id="id_nome" required><br>
+
+                <label for="id_telefone">Descrição:</label>
+                <input type="text" name="telefone" id="id_telefone" required><br>
+
+                <label for="id_email">Categoria:</label>
+                <input type="email" name="email" id="id_email" required><br>
+
+                <label for="id_data_nascimento">Inscrição até:</label>
+                <div class="data-nascimento">
+                    <input type="text" name="dia" id="id_dia" placeholder="Dia" required style="display: inline-block; width: 30%;">
+                    <input type="text" name="mes" id="id_mes" placeholder="Mês" required style="display: inline-block; width: 30%;">
+                    <input type="text" name="ano" id="id_ano" placeholder="Ano" required style="display: inline-block; width: 30%;">
+                </div>
+
+                <button type="submit" id="enviar">Enviar</button>
+                <a href="{% url 'cadastro_instituicao' %}" class="link-voltar">Voltar</a>
+
+            </form>
+        </div>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div>&copy; 2021-2023 Inc. All rights reserved. UNIVESP PI-II Turma-004 - BTI</div>
+        <div>Hora: <span id="current-time"></span></div>
+    </footer>
+
+    <script>
+/********* Inicio da Função do tempo no canto direito da tela **********/
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+            document.getElementById('current-time').textContent = timeString;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+/********* Fim da Função do tempo no canto direito da tela **********/
+    </script>
+</body>
+</html>

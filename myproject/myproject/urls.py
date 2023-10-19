@@ -9,5 +9,5 @@ urlpatterns = [
     path('cadastro/estudante/', cadastro_estudante, name='cadastro_estudante'),
     path('escolher_tipo_conta/', escolher_tipo_conta, name='escolher_tipo_conta'),
     path('sucesso/', sucesso, name='sucesso'),
-    path('cadastro/cursos/', cadastro_cursos_view, name='cadastro_cursos')
+    path('cadastro/cursos/', cadastro_cursos_view, name='cadastro_cursos'),
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CadastroInstituicaoForm, CadastroEstudanteForm
+from .models import Instituicao
 
 def home(request):
     return render(request, 'index.html')
@@ -34,3 +35,30 @@ def sucesso(request):
 
 def cadastro_cursos_view(request):
     return render(request, 'conta/cadastro_cursos.html')
+
+def cadastrar_instituicao(request):
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        cep = request.POST['cep']
+        endereco = request.POST['endereco']
+        cidade = request.POST['cidade']
+        uf = request.POST['uf']
+        telefone = request.POST['telefone']
+        email = request.POST['email']
+        site = request.POST['site']
+
+        instituicao = Instituicao(
+            nome=nome,
+            cep=cep,
+            endereco=endereco,
+            cidade=cidade,
+            uf=uf,
+            telefone=telefone,
+            email=email,
+            site=site
+        )
+        instituicao.save()
+
+        return redirect('cadastro_cursos')  # Redireciona para a próxima página após o cadastro
+
+    return render(request, 'conta/cadastro_instituicao.html')

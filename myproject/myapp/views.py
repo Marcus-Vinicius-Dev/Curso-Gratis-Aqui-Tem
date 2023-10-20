@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CadastroInstituicaoForm, CadastroEstudanteForm
 from .models import Instituicao
+from .forms import InstituicaoForm
 
 def home(request):
     return render(request, 'index.html')
@@ -60,5 +61,16 @@ def cadastrar_instituicao(request):
         instituicao.save()
 
         return redirect('cadastro_cursos')  # Redireciona para a próxima página após o cadastro
-
+    
     return render(request, 'conta/cadastro_instituicao.html')
+
+def cadastro_instituicao(request):
+    if request.method == 'POST':
+        form = InstituicaoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Você pode redirecionar o usuário para outra página após o cadastro bem-sucedido.
+            return redirect('outra_pagina')
+    else:
+        form = InstituicaoForm()
+    return render(request, 'conta/cadastro_instituicao.html', {'form': form})

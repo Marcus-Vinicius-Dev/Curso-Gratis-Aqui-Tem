@@ -1,13 +1,14 @@
 from django.contrib import admin
 from django.urls import path
-from myapp.views import home, cadastro_instituicao, cadastro_estudante, escolher_tipo_conta, sucesso, cadastro_cursos_view
+from myapp import views  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
-    path('cadastro/instituicao/', cadastro_instituicao, name='cadastro_instituicao'),
-    path('cadastro/estudante/', cadastro_estudante, name='cadastro_estudante'),
-    path('escolher_tipo_conta/', escolher_tipo_conta, name='escolher_tipo_conta'),
-    path('sucesso/', sucesso, name='sucesso'),
-    path('cadastro/cursos/', cadastro_cursos_view, name='cadastro_cursos'),
+    path('', views.home, name='home'),
+    path('cadastro/instituicao/', views.cadastro_instituicao, name='cadastro_instituicao'),
+    path('cadastro/estudante/', views.cadastro_estudante, name='cadastro_estudante'),
+    path('escolher_tipo_conta/', views.escolher_tipo_conta, name='escolher_tipo_conta'),
+    path('sucesso/', views.sucesso, name='sucesso'),
+    path('cadastro/cursos/', views.cadastro_cursos_view, name='cadastro_cursos'),
 ]
+

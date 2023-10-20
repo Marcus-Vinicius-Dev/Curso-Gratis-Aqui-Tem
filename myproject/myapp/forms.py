@@ -1,4 +1,5 @@
 from django import forms
+from .models import Instituicao
 
 class CadastroInstituicaoForm(forms.Form):
     nome = forms.CharField(label='Nome', max_length=100)
@@ -10,6 +11,16 @@ class CadastroInstituicaoForm(forms.Form):
     email = forms.EmailField(label='E-mail', max_length=100)
     site = forms.URLField(label='Site', max_length=100)
     nome = forms.CharField(max_length=100)
+
+# forms.py
+
+from django import forms
+from .models import Instituicao
+
+class InstituicaoForm(forms.ModelForm):
+    class Meta:
+        model = Instituicao
+        fields = '__all__'
 
 class CadastroEstudanteForm(forms.Form):
     # Defina os campos do formulário aqui

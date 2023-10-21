@@ -10,7 +10,6 @@ class CadastroInstituicaoForm(forms.Form):
     telefone = forms.CharField(label='Telefone', max_length=15)
     email = forms.EmailField(label='E-mail', max_length=100)
     site = forms.URLField(label='Site', max_length=100)
-    nome = forms.CharField(max_length=100)
 
 # forms.py
 

@@ -5,7 +5,7 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('cadastro/instituicao/', views.cadastro_instituicao_form, name='cadastro_instituicao'),
+    path('cadastro/instituicao/', views.cadastro_instituicao, name='cadastro_instituicao'),  # Atualize esta linha
     path('cadastro/estudante/', views.cadastro_estudante, name='cadastro_estudante'),
     path('escolher_tipo_conta/', views.escolher_tipo_conta, name='escolher_tipo_conta'),
     path('sucesso/', views.sucesso, name='sucesso'),

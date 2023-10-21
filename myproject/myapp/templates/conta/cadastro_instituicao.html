@@ -21,8 +21,9 @@
         {{ block.super }}
         <div class="card">
             <h1>Cadastro de Instituição</h1>
-            <form method="post" action="{% url 'cadastro_cursos' %}">
+            <form method="post" action="{% url 'cadastrar_instituicao' %}">
                 {% csrf_token %}
+                {{ form.as_p }}
                 <label for="id_nome">Nome:</label>
                 <input type="text" name="nome" id="id_nome" required><br>
 

@@ -26,29 +26,9 @@ def sucesso(request):
 def cadastro_cursos_view(request):
     return render(request, 'conta/cadastro_cursos.html')
 
-def cadastro_instituicao(request):
-    if request.method == 'POST':
-        form = CadastroInstituicaoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('listar_instituicoes')  
-    else:
-        form = CadastroInstituicaoForm()
-    return render(request, 'conta/cadastro_instituicao.html', {'form': form})
-
 def listar_instituicoes(request):
     instituicoes = Instituicao.objects.all()
     return render(request, 'conta/listar_instituicoes.html', {'instituicoes': instituicoes})
-
-def cadastro_instituicao_form(request):
-    if request.method == 'POST':
-        form = CadastroInstituicaoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('listar_instituicoes')
-    else:
-        form = CadastroInstituicaoForm()
-    return render(request, 'conta/cadastro_instituicao.html', {'form': form})
 
 def cadastrar_instituicao(request):
     if request.method == 'POST':
@@ -56,6 +36,16 @@ def cadastrar_instituicao(request):
         if form.is_valid():
             form.save()
             return redirect('listar_instituicoes')  # Redireciona para a página de listagem de instituições
+    else:
+        form = CadastroInstituicaoForm()
+    return render(request, 'conta/cadastro_instituicao.html', {'form': form})
+
+def cadastro_instituicao(request):
+    if request.method == 'POST':
+        form = CadastroInstituicaoForm(request.POST)
+        if form.is_valid():
+            instance = form.save()
+            return redirect('listar_instituicoes')
     else:
         form = CadastroInstituicaoForm()
     return render(request, 'conta/cadastro_instituicao.html', {'form': form})

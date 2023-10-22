@@ -10,7 +10,7 @@ function carregarMaisPostagens() { /* Função que carrega novas postagens */
     document.getElementById('indicador-de-carregamento').style.display = 'block'; // Exibe o indicador de carregamento 
 
     setTimeout(function () {  /* Temporiza o código abaixo conforme o valor ao final da função definida inicialmente em 2000 milisegundos */
-      const novoContainer = document.createElement('div'); /* const novoContainer cria uma nova <div> html napágina que será usada para mostrar novas postagens*/
+      const novoContainer = document.createElement('div'); /* const novoContainer cria uma nova <div> html na página que será usada para mostrar novas postagens*/
       novoContainer.classList.add('postagens-container'); //  adicionando a classe 'postagens-container' do index.html à <div> criada 
     
       let novoPost = ''; // string vaziz = '' serve para acumular o HTML das novas postagens 

@@ -2,7 +2,7 @@ body { /*especificações mínimas para a página do portal*/
   margin: 0;
   padding: 0;
   background-color: #F0F2F5;
-  padding-top: 100px; /*para que o cabeçalho possa ter espaço a fim de que se torne possível a plicação de ajustes*/
+  padding-top: 100px; /*para que o cabeçalho possa ter espaço a fim de que se torne possível a aplicação de ajustes*/
 }
 /***********Cabeçalho início************/
 .header-container {

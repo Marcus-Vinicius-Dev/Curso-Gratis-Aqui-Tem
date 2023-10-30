@@ -1,0 +1,68 @@
+{% extends "erp/_layouts/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Estudantes{% endblock %}
+
+{% block conteudo %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastro de Estudantes</h5><br>
+                        <!--<p class="card-text">
+                            Complete o formulário abaixo para cadastrar
+                            uma nova <code>Instituição</code>.
+                        </p>-->
+                        <form method="post">
+                            <!-- Não se esqueça dessa tag -->
+                            {% csrf_token %}
+
+                            <!-- Nome -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                {% render_field form.nome class+="form-control" %}
+                            </div>
+
+                            <!-- Sobrenome -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Sobrenome</span>
+                                {% render_field form.sobrenome class+="form-control" %}
+                            </div>
+                            
+                            <!-- Nascimento -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Data nascimento</span>
+                                {% render_field form.data_nascimento class+="form-control" %}
+                            </div>
+
+                            <!-- Telefone -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Telefone/Whats</span>
+                                {% render_field form.telefone class+="form-control" %}
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">E-mail</span>
+                                {% render_field form.email class+="form-control" %}
+                            </div>
+                            
+                            <!-- Sexo -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Sexo</span>
+                                {% render_field form.sexo class+="form-control" %}
+                            </div>
+                            <hr>
+                            <div class="text-end">
+                                <a href="{% url 'erp:index' %}" class="btn btn-outline-primary">Voltar</a>
+                                <button class="btn btn-primary">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

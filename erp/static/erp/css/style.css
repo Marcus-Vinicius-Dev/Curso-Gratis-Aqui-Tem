@@ -145,7 +145,7 @@
 }
 /***********Cabeçalho fim************/
 /***********Menu Lateral início************/
-.menu-lateral {
+/* .menu-lateral {
   background-color: white;
   color: black;
   width: 350px;
@@ -186,7 +186,7 @@
   width: 25px; 
   height: 25px; 
   margin-right: 10px; 
-}
+} */
 
 /***********Menu Lateral fim************/
 /***********Conteúdo de Postagens início************/
@@ -194,16 +194,21 @@
   margin-top: 10px;
 }
 
+.load-more{
+  margin-left: 50%;
+  margin-bottom: 30px;
+}
 .post-card {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: 30px;
-  margin-left: 600px;
-  margin-right: 250px;
+  margin-left: 25%;
+  margin-right: 100px;
   margin-top: 30px;
   padding: 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 60%;
 }
 
 .post-conteudo img {
@@ -212,6 +217,10 @@
 }
 
 .post-conteudo p {
+  text-align: center;
+  text-decoration: bold;
+}
+.post-conteudo h3 {
   text-align: center;
   text-decoration: bold;
 }
@@ -270,3 +279,15 @@
   z-index: 90;
 }
 /***********Conteúdo da Classe Recarregar fim************/
+.detalhes{
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilize os elementos <li> conforme necessário */
+ul li {
+  /* Seus estilos para os elementos <li> aqui */
+}

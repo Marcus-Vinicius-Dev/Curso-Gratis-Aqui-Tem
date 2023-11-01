@@ -17,6 +17,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">Descrição</th>
                                     <th scope="col">Categoria/Área</th>
+                                    <th scope="col">Instituição</th>
                                     <th scope="col" class="text-center">Ações</th>
                                 </tr>
                                 </thead>
@@ -27,6 +28,7 @@
                                     <td>{{ cursos.nome }}</td>
                                     <td>{{ cursos.descricao }}</td>
                                     <td>{{ cursos.categoria }}</td>
+                                    <td>{{ cursos.instituicao }}</td>
                                     <td class="text-center">
                                         <a href="{% url 'erp:atualiza_cursos' pk=cursos.id %}"
                                         class="btn btn-primary btn-sm">Atualizar</a>

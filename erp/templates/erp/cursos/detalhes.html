@@ -1,0 +1,39 @@
+{% extends "erp/_layouts/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Atualização de Cursos{% endblock %}
+
+{% block conteudo %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="detalhes">
+                            <h1>{{ curso.nome }}</h1>
+                            <br/>
+                            <p><b>Descrição:</b> {{ curso.descricao }}</p>
+                            <p><b>Categoria:</b> {{ curso.categoria }}</p>
+                            <p><b>Limite para inscrição:</b> {{ curso.inscricao }}</p>
+                            
+                            <br/>
+                            <h1>Instituição</h1>
+                            <p><b>Nome:</b> {{ curso.instituicao.nome }}</p>
+                            <p><b>Endereço:</b> {{ curso.instituicao.endereco }}</p>
+                            <p><b>Cidade:</b> {{ curso.instituicao.cidade }}</p>
+                            <p><b>CEP:</b> {{ curso.instituicao.cep }}</p>
+                            <p><b>Telefone:</b> {{ curso.instituicao.telefone }}</p>
+                            <p><b>E-mail:</b> {{ curso.instituicao.email }}</p>
+                            <p><b>Site:</b> {{ curso.instituicao.site }}</p>
+                            <p><b>UF:</b> {{ curso.instituicao.uf }}</p>
+                            <!-- Adicione mais informações do curso conforme necessário -->
+                            <p><b>Criado em:</b> {{ curso.data_de_criacao }}</p>
+                            <a href="/">Voltar para a página inicial</a> 
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

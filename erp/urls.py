@@ -13,6 +13,9 @@ urlpatterns = [
     
     #POST /Logout
     path('logout/', auth_views.LogoutView.as_view(template_name='login.html'), name='logout'),
+
+    #POST /register
+    path('register/', views.register_inst, name='register'),
         
     # GET /instituicao
     path('instituicao/', views.HomeInstituicaoView.as_view(), name="index_instituicao"),
@@ -75,5 +78,15 @@ urlpatterns = [
 
     # GET/POST /estudante/excluir/{pk}
     path('estudante/excluir/<pk>', views.DeletaEstudanteView.as_view(), name="deleta_estudante"),
+
+    # URL para carregar mais cursos
+    path('postagem/', views.postagem, name='postagem'),
+
+    # URL para carregar mais cursos
+    path('load_more_cursos/', views.load_more_cursos, name='load_more_cursos'),
+
+    path('cursos/detalhes/<int:curso_id>/', views.detalhes_curso, name='detalhes_curso'),
+
+    path('busca_cursos/', views.BuscaCursosView.as_view(), name='busca_cursos'),
 
 ]

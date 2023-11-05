@@ -1,9 +1,13 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
 class Usuario(AbstractUser):
-    pass
+    email = models.EmailField(
+        max_length=50,
+        null=False,
+        blank=False
+    )
+    
 
 class Instituicao(models.Model):
     #cnpj = models.CharField(
@@ -11,6 +15,8 @@ class Instituicao(models.Model):
     #    null = False,
     #    blank = False
     #)
+    
+    user = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
     nome = models.CharField(
         max_length=255,
@@ -66,7 +72,12 @@ class Instituicao(models.Model):
         return f"{self.nome}"
 
 
+
 class Cursos(models.Model):
+    
+
+    instituicao = models.ForeignKey(Instituicao, on_delete=models.CASCADE)
+
     nome = models.CharField(
         max_length=100,
         null=False,
@@ -78,17 +89,31 @@ class Cursos(models.Model):
         null=False,
         blank=False
     )
-    
+
+    CATEGORIAS_CHOICES = [
+        ('culinaria', 'Culinária'),
+        ('danca', 'Dança'),
+        ('esportes', 'Esportes'),
+        ('idiomas', 'Idiomas'),
+        ('musica', 'Música'),
+        ('negocios', 'Negócios'),
+        ('tecnologia', 'Tecnologia'),
+        ('artes', 'Artes'),
+        ('outros', 'Outros'),
+        # Adicione quantas categorias você desejar
+    ]
+
     categoria = models.CharField(
-        max_length=150,
-        null=True,
-        blank=True
+        max_length=50,
+        choices=CATEGORIAS_CHOICES,
+        default='categoria1'  # Categoria padrão
     )
     
     inscricao = models.DateField(
         null=True,
         blank=True
     )
+    data_de_criacao = models.DateTimeField(auto_now_add=True) 
     
     objetos = models.Manager()
 

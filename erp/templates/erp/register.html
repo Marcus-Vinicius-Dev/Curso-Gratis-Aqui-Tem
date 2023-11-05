@@ -8,11 +8,11 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <p><button class="login" type="submit">ENTRAR</button></p>
-              </form>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Registrar</button>
+                </form>
             </div>
         </div>
     </div>

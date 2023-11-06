@@ -19,9 +19,15 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{% static '/erp/css/login.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'erp/css/master.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'erp/css/master_tablet.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'erp/css/master_mobile.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'erp/css/aos.css' %}">
         <!--<link rel="stylesheet" type="text/css" href="{% static 'erp/css/master_login.css' %}">-->
 
+        <!-- CSS MARCUS-->
+        <link rel="stylesheet" type="text/css" href="{% static 'erp/css/style.css' %}">
+
+        <!-- CSS MARCUS-->
         <!-- Arquivos para ativação das máscara de CEP, CNPJ, etc -->
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -34,6 +40,7 @@
     </head>
 <body>
 <!-- Navbar -->
+<!-- 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="https://univesp.br/">
@@ -51,10 +58,10 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'erp:index' %}">Home</a>
                 </li>
-                <!--<li class="nav-item active">
+                <li class="nav-item active">
                     <a class="nav-link-cadastro" href="{% url 'erp:index' %}">Cadastre-se</a>
-                </li>-->
-                <!--<li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'erp:lista_instituicao' %}">Instituições</a>
                 </li>
                 <li class="nav-item">
@@ -62,20 +69,78 @@
                 </li>
                 <li class="nav-item">
                     
-                </li>
-            </ul>-->
-            <!--<ul class="navbar-nav float-right">
+                </li> 
+            </ul>
+           <ul class="navbar-nav float-right">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><b>Hora: </b>{% tempo_atual %}</a>
                 </li>
-            </ul>-->
+            </ul>
             <!--<div id="login">
                 <span><a class="login" href="{% url 'login' %}">Login</a></span>
-            </div>-->
+            </div>
             <div id="logout">
                 <span><a class="logout" href="{% url 'logout' %}">Sair</a></span>
-            </div>
+            </div> 
         </div>
+    </div>
+</nav> 
+-->
+
+<nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <!-- <img src="{% static 'erp/img/banner.png' %}" height="55px"> -->
+            <img src="{% static 'erp/img/acervo_logo.png' %}" height="55px"> 
+            
+        </a>
+        <ul class="nav-list">
+            
+            <li><a href="/">Home</a></li>
+            
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+                <a href="#">Instituições</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'erp:cadastra_instituicao' %}">Cadastrar Instituição</a>
+                    <a href="{% url 'erp:lista_instituicao' %}">Instituiçoes cadastradas</a>
+                    <a href="{% url 'erp:cadastra_cursos' %}">Cadastrar Cursos</a>
+                    <a href="{% url 'erp:lista_cursos' %}">Cursos cadastrados</a>
+                </div>
+            </li>
+            {% endif %}
+            <li class="dropdown">
+                <a href="{% url 'erp:busca_cursos' %}">Procurar</a>
+                <!-- <div class="dropdown-content">
+                    <a href="{% url 'erp:lista_cursos' %}">Listar</a>
+                </div> -->
+            </li>
+            <!-- <li class="dropdown">
+                <a href="#">Estudantes</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'erp:cadastra_estudante' %}">Cadastrar</a>
+                    <a href="{% url 'erp:lista_estudante' %}">Listar</a>
+                </div>
+            </li> -->
+             <li class="dropdown" id="login">
+                <span>
+                    {% if user.is_authenticated %}
+                    <!-- Exibir a opção de logout -->
+                    <a href="{% url 'logout' %}">{{ user.username|slice:":10" }}</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'logout' %}">logout</a>
+                    </div>
+                    {% else %}
+                    <!-- Exibir a opção de login -->
+                    <a href="">Login</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'login' %}">entrar</a>
+                        <a href="/register/">registrar</a>
+                    </div>
+                    {% endif %}
+                </span>
+            </li>
+        </ul>
     </div>
 </nav>
 
@@ -84,15 +149,15 @@
     {% block conteudo %}{% endblock %}
 </div>
 
-<footer>
+<!-- <footer>
     <div id="rodape">
         <div>
             <p class="copyrigth">© Copyrigth 2021-2023 Inc. All rights reserved. UNIVESP - PI-II Turma 004 - BTI</p>
         </div>  
-            <!--<span class="bem-vindo">Usuário:&nbsp;&nbsp;<small>{{user.first_name}} {{user.last_name}}</small> - Permissão: {{user.username}}</span>-->
+            <span class="bem-vindo">Usuário:&nbsp;&nbsp;<small>{{user.first_name}} {{user.last_name}}</small> - Permissão: {{user.username}}</span>
             <span class="hora">Hora:<small>&nbsp;&nbsp;{% tempo_atual %}</small> </span>
     </div>
-</footer>
+</footer> -->
 
 <!-- Links para os arquivos JS do Bootstrap -->
 
@@ -101,6 +166,10 @@
 <script src="{% static 'erp/js/cep_scripts.js' %}"></script>
 <script src="{% static 'erp/js/email_scripts.js' %}"></script>
 <script src="{% static 'erp/js/jquery.mask.js' %}"></script>
+<script src="{% static 'erp/js/script.js' %}"></script>
+
+
+
 
 {% block scripts %}{% endblock %}
 

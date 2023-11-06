@@ -42,6 +42,12 @@
                                 {% render_field form.inscricao class+="form-control" %}
                             </div>
 
+                            <!-- Instituicao vinculada-->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Instituiçao:</span>
+                                {% render_field form.instituicao class+="form-control" %}
+                            </div>
+
                             <hr>
                             <div class="text-end">
                                 <a href="{% url 'erp:index' %}" class="btn btn-outline-primary">Voltar</a>

@@ -1,4 +1,3 @@
-import os #acrescentado para integrar formulários
 from pathlib import Path
 
 # Diretório raíz
@@ -85,14 +84,12 @@ USE_TZ = True
 
 # Arquivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ #adicionado para integrar formulários
-    os.path.join(BASE_DIR, 'static'),
-]
 
 # Tipo padrão das chaves primárias
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL  = 'login'
-LOGOUT_REDIRECT_URL = 'logout'
+LOGIN_REDIRECT_URL  = '/'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'accounts/login/'
 
 LOGGING_CONFIG = None

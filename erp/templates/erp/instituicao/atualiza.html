@@ -69,6 +69,13 @@
                                 {% render_field form.site class+="form-control" %}
                             </div>
 
+                            <!-- user -->
+                            <div class="input-group mb-3"style="display: none;">
+                                <span class="input-group-text">User</span>
+                                {{ form.user.value }}
+                                <input type="hidden" name="{{ form.user.name }}" value="{{ form.user.value }}">
+                            </div>
+
                             <hr/>
                             <div class="text-end">
                                 <a href="{% url 'erp:lista_instituicao' %}" class="btn btn-outline-primary">Voltar</a>

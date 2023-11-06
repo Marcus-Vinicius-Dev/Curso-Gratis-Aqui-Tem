@@ -1,0 +1,293 @@
+/*body { especificações mínimas para a página do portal
+  margin: 0;
+  padding: 0;
+  background-color: #F0F2F5;
+  padding-top: 100px; /*para que o cabeçalho possa ter espaço a fim de que se torne possível a plicação de ajustes
+}*/
+/***********Cabeçalho início***********
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  margin-top: -100px;
+  height: 80px;
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+.menu {
+  text-align: center;
+  margin-left: 40%;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menu-item {
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.menu-item:hover .menu-text {
+  opacity: 1; /* Torna o texto visível quando o mouse passa sobre o item do menu 
+}
+
+.user {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.menu-icon { /*menu e conta do canto superior direito
+  width: 25px; 
+  height: 25px; 
+  margin-right: 10px; 
+}
+
+.menu-icon:hover { 
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+}
+
+.menu-text {
+  opacity: 0; 
+  transition: opacity 0.3s; 
+}
+
+.botao-procurar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.botao-procurar input[type="text"] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #F0F2F5;
+  margin-bottom: 5px;
+}
+
+.botao-procurar input:hover {
+  background-color: #f0f0f0; 
+  cursor: text; 
+  border-radius: 10px;
+  border: black solid 1px;
+}
+
+.botao-procurar button {
+  padding: 5px 10px;
+  background-color: #F0F2F5;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  margin-left: 5px;
+}
+
+.botao-procurar button:hover {
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+  border: black solid 1px;
+}
+
+.user a {
+    margin-left: 10px; 
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;     
+}
+
+.menu-icon-dir { /*menu e conta do canto superior direito
+  width: 80px; 
+  height: 25px;  
+}
+
+.menu-icon-dir:hover { 
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+  padding: 10px;
+}
+/***********Cabeçalho fim************/
+/***********Menu Lateral início************/
+/* .menu-lateral {
+  background-color: white;
+  color: black;
+  width: 350px;
+  height: 100%;     
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto; 
+  margin-top: 90px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-lateral li {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+}
+
+.menu-lateral i {
+  margin-right: 10px;
+}
+
+.menu-lateral li:hover {
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+  border-radius: 10px;
+}
+
+.menu-lateral img {
+  width: 25px; 
+  height: 25px; 
+  margin-right: 10px; 
+} */
+
+/***********Menu Lateral fim************/
+/***********Conteúdo de Postagens início************/
+.postagens-container {
+  margin-top: 10px;
+}
+
+.load-more{
+  margin-left: 50%;
+  margin-bottom: 30px;
+}
+.post-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-left: 25%;
+  margin-right: 100px;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 60%;
+}
+
+.post-conteudo img {
+  width: 100%; 
+  height: auto; 
+}
+
+.post-conteudo p {
+  text-align: center;
+  text-decoration: bold;
+}
+.post-conteudo h3 {
+  text-align: center;
+  text-decoration: bold;
+}
+
+.post-acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.acoes-btn {
+  flex-grow: 1; 
+  background-color: #F0F2F5;
+  padding: 10px; 
+  cursor: pointer; 
+  text-align: center; 
+  border: none;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.like-btn {
+  background-color: white;
+  padding: 0px 10%;
+  flex-grow: 1;
+}
+
+.post-acoes .acoes-btn img {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 5px; 
+}
+
+.comentario-btn {
+  background-color: white;
+  padding: 0px 10%;
+  flex-grow: 1;
+}
+
+.compartilhar-btn {
+  background-color: white;
+  padding: 0px 10%;
+  flex-grow: 1;
+}
+
+.acoes-btn:hover {
+  background-color: #f0f0f0; 
+  color: black;   
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/***********Conteúdo de Postagens fim************/
+/***********Conteúdo da Classe Recarregar início************/
+.indicador-de-carregamento {
+  display: none;
+  margin-left: 500px;
+  z-index: 90;
+}
+/***********Conteúdo da Classe Recarregar fim************/
+.detalhes{
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilize os elementos <li> conforme necessário */
+ul li {
+  /* Seus estilos para os elementos <li> aqui */
+}

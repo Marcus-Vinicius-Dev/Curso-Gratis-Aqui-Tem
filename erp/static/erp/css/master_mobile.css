@@ -1,0 +1,62 @@
+@media screen and
+    (max-width: 576px) {
+    body{
+        background-repeat: no-repeat;
+        background-size: auto;
+        /*background-size: contain;*/
+            
+    }
+    .navbar-brand{
+        width: 50%;
+    }
+    .mt-5{
+        width: 100%;
+        margin-top: 2rem!important;
+    }
+    .card-title{
+        margin-bottom: 10px;
+    }
+    a.logout{
+        text-decoration: none;
+        color: red;
+    }
+    .logout:hover{
+        color: #98FB98;
+    }
+    #id_nome, #id_descricao,
+    #id_categoria{
+        height:40px;
+    }
+    .card.border-dark{
+        margin-bottom: 0px;
+    }
+    .col-md-4{
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+        /*top: 92.2%;*/
+        /*width: 100%;
+        height: 62px;
+        background-color: #000000!important;
+    /*.bem-vindo{
+        position: relative;
+        float: left;
+        margin-top: 20px;
+        font-size: 13px;
+        margin-left: 20px;
+        color: #ffffff;
+    }*/
+    .hora{
+        display: none;
+    }
+    .copyrigth{
+        margin-left: 3px;
+        position: relative;
+        font-size: 11px;
+    }
+    }
+}

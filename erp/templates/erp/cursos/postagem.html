@@ -1,0 +1,124 @@
+{% load static %}
+<!-- <div class="container mt-5"> -->
+<div class="container ">
+    <div id="cursos-container">
+        <!-- Os três cursos mais recentes serão exibidos aqui -->
+
+        <!-- <div class="postagens-container"> -->
+            <!-- <div class="post-card">
+                <div class="post-conteudo">
+                    <img src="{% static '/erp/img/curso.png' %}" alt="imagem do curso">
+                    <p>Conteúdo da postagem...</p>
+                </div>
+                 <div class="post-acoes">
+                    <button class="acoes-btn like-btn"><img src="{% static '/erp/img/curtir.svg' %}" alt="ícone de curtir">Curtir</button>
+                    <button class="acoes-btn compartilhar-btn"><img src="{% static '/erp/img/compartilhar.svg' %}" alt="ícone de compartilhar">Compartilhar</button>
+                </div> 
+            </div>  -->
+            
+        </div>
+        <!-- Botão "Carregar mais cursos" -->
+            <button class="btn btn-primary btn-sm load-more" id="load-more-button" >Carregar mais cursos</button>
+    </div>
+
+    
+
+    <script>
+        $(document).ready(function () {
+    var offset = 0;  // Offset inicial
+    var limit = 3;   // Número de cursos a serem carregados de cada vez
+
+    function loadMoreCursos() {
+        $.get('/load_more_cursos/', { offset: offset }, function (data) {
+            var cursos = data.cursos;
+            if (cursos.length === 0) {
+                // Não há mais cursos a serem carregados
+                $('#load-more-button').prop('disabled', true);
+            } else {
+                // Adicione os cursos ao contêiner
+                for (var i = 0; i < cursos.length; i++) {
+                    var curso = cursos[i];
+                    // Obtenha o nome da categoria do curso do JSON
+                    var categoriaNome = "${curso.categoria}";
+
+                    // Construa o src da imagem com base na categoria
+                    var imagemSrc = "{% static 'erp/img/' %}" + curso.categoria + ".jpg";
+                    var site = curso.site !== null ? curso.site : '#';
+                    
+
+                    var cursoHTML = `
+                        <div class="curso">
+                            <div class="post-card">
+                                    <div class="post-conteudo">
+                                        <img src="${imagemSrc}" alt="imagem do curso">                                        
+                                        <p><h3>${curso.nome}</h3></p>
+                                        <p>${curso.descricao}</p>
+                                        <p>${curso.uf} - ${curso.cidade} - ${curso.telefone} - <a href="${site}">Website</a></p>
+                                        <p></p>
+                                        <p>Inscrições até: ${curso.inscricao}</p>
+                                    </div>
+                                    <div class="post-acoes">
+                                        <button class="acoes-btn like-btn"><a href="/cursos/detalhes/${curso.pk}/" style="text-decoration: none; color: #000;"><img src="{% static '/erp/img/curtir.svg' %}" alt="ícone de curtir">Detalhes</a></button>
+                                        
+                                    </div> 
+                                </div>
+                        </div>
+                    `;
+                    $('#cursos-container').append(cursoHTML);
+                }
+                offset += limit;  // Atualize o offset
+            }
+        });
+    }
+
+        // Carregue os cursos iniciais
+        loadMoreCursos();
+
+        // Lidar com o clique no botão "Carregar mais cursos"
+        $('#load-more-button').on('click', loadMoreCursos);
+    });
+    </script>
+
+<script>
+//     $(document).ready(function () {
+// var offset = 0;  // Offset inicial
+// var limit = 3;   // Número de cursos a serem carregados de cada vez
+
+// function loadMoreCursos() {
+//     $.get('/load_more_cursos/', { offset: offset }, function (data) {
+//         var cursos = data.cursos;
+//         if (cursos.length === 0) {
+//             // Não há mais cursos a serem carregados
+//             $('#load-more-button').prop('disabled', true);
+//         } else {
+//             // Adicione os cursos ao contêiner
+//             for (var i = 0; i < cursos.length; i++) {
+//                 var curso = cursos[i];
+//                 var cursoHTML = `
+//                     <div class="curso">
+//                         <h2>${curso.nome}dfgdfg</h2>
+//                         <p>${curso.descricao}</p>
+//                         <p>${curso.categoria}</p>
+//                     </div>
+//                 `;
+//                 $('#cursos-container').append(cursoHTML);
+//             }
+//             offset += limit;  // Atualize o offset
+//         }
+//     });
+// }
+
+//     // Carregue os cursos iniciais
+//     loadMoreCursos();
+
+//     // Lidar com o clique no botão "Carregar mais cursos"
+//     $('#load-more-button').on('click', loadMoreCursos);
+// });
+
+
+
+// <button class="acoes-btn compartilhar-btn"><img src="{% static '/erp/img/compartilhar.svg' %}" alt="ícone de compartilhar">Compartilhar</button>
+</script>
+
+</div>
+

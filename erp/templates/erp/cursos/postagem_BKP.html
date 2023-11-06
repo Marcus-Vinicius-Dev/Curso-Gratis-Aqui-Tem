@@ -1,0 +1,64 @@
+{% extends "erp/_layouts/base.html" %}
+
+{% block title %}Lista de Cursos{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <!-- Seu arquivo HTML (por exemplo, home.html) -->
+
+    <!-- Conteúdo existente da sua página -->
+    <div id="cursos-list">
+        <!-- Cursos carregados inicialmente -->
+        {% for curso in cursos %}
+            <div class="curso">
+                <h2>{{ curso.nome }}</h2>
+                <p>{{ curso.descricao }}</p>
+                <!-- Adicione outros campos do curso conforme necessário -->
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Botão para carregar mais cursos -->
+    <button id="load-more-button">Carregar mais cursos</button>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var numCursosCarregados = {{ cursos|length }};  // Inicialize com o número de cursos já exibidos.
+
+            $("#load-more-button").click(function () {
+                $.ajax({
+                    url: "{% url 'erp:load_more_cursos' %}", // AQUIIIIIIIIIII
+                    data: {
+                        num_cursos: numCursosCarregados
+                    },
+                    success: function (data) {
+                        alert(data.object)
+
+
+                        // var cursos = data.curso;
+                        // if (cursos.length > 0) {
+                        //     for (var i = 0; i < cursos.length; i++) {
+                        //         var curso = cursos[i];
+                        //         var cursoHtml = `
+                        //             <div class="curso">
+                        //                 <h2>${curso.nome}</h2>
+                        //                 <p>${curso.descricao}</p>
+                        //                 <!-- Adicione outros campos do curso conforme necessário -->
+                        //             </div>`;
+                        //         $("#cursos-list").append(cursoHtml);
+                        //     }
+                        //     numCursosCarregados += cursos.length;
+                        // } else {
+                        //     $("#load-more-button").hide();
+                        //}
+                    }
+                });
+            });
+        });
+    </script>
+</div>
+
+
+{% endblock %}

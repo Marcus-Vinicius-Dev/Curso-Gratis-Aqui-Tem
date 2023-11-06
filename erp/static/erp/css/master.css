@@ -11,6 +11,7 @@
         background-position: 50% 40px;
         /* background-image: url(../img/technology2_dagua.jpg); */
         background-color: #F0F2F5;;
+        margin-top: 120px; /* Igual à altura da navbar */
     }
   /* alteracao no funcionamento do menu - Marcos Vinicius Melo 22.10.2023
   Original Edesio abaixo
@@ -43,8 +44,15 @@
     } */
 
     .navbar {
-        background-color: #000;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         /* overflow: hidden; */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* background-color: #333;  */
+        z-index: 1000; /* Para garantir que a navbar fique acima de outros elementos */
     }
     
     .nav-list {
@@ -60,8 +68,8 @@
     
     .nav-list li a {
         display: block;
-        color: white;
-        background-color: #000;
+        color: #000000;
+        background-color: #fff;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;

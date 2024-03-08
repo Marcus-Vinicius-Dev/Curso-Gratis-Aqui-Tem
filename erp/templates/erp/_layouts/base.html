@@ -166,23 +166,35 @@
 </footer> -->
 
 <!-- Links para os arquivos JS do Bootstrap -->
-
 <script src="{% static 'erp/js/aos.js' %}"></script>
 <script src="{% static 'erp/js/mascara.js' %}"></script>
 <script src="{% static 'erp/js/cep_scripts.js' %}"></script>
 <script src="{% static 'erp/js/email_scripts.js' %}"></script>
 <script src="{% static 'erp/js/jquery.mask.js' %}"></script>
+<script src="{% static 'erp/js/bootstrap.min.js' %}"></script>
+
+<!-- Arquivo JavaScript personalizado -->
 <script src="{% static 'erp/js/script.js' %}"></script>
 
-
-
-
-{% block scripts %}{% endblock %}
+{% block scripts %}
+    <!-- Chame a função detectorDeRolagem() após carregar todos os elementos necessários no DOM -->
+    <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            detectorDeRolagem();
+        });
+    </script>
+{% endblock %}
 
 <!--<script src="{% static 'erp/js/scripts.js' %}"></script>-->
 
 <script type="application/javascript">
     AOS.init();
 </script>
+<!-- <script src="seu-arquivo-javascript.js"></script> -->
+<!-- Chame a função detectorDeRolagem() após carregar todos os elementos necessários no DOM -->
+<script>
+    detectorDeRolagem();
+</script>
+<script src="{% static 'erp/js/script.js' %}"></script>
 </body>
 </html>

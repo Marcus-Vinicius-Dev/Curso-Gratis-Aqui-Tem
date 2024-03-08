@@ -12,7 +12,6 @@
         <title>{% block title %}Sistema de Gerenciamento de Recursos{% endblock %}</title>
 
         <!-- Favicon -->
-        <!--<link rel="shortcut icon" href="{% static 'erp/img/favicon.png' %}" type="image/png">-->
 
         <!-- Arquivos CSS -->
         <!--<link rel="stylesheet" type="text/css" href="{% static 'erp/css/bootstrap.min.css' %}">-->
@@ -29,9 +28,7 @@
 
         <!-- CSS MARCUS-->
         <!-- Arquivos para ativação das máscara de CEP, CNPJ, etc -->
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
         
         
@@ -143,6 +140,15 @@
         </ul>
     </div>
 </nav>
+
+<!-- Código HTML para uma postagem -->
+<div class="postagem">
+    <h2>Título da Postagem</h2>
+    <p>Conteúdo da postagem...</p>
+    <img src="{% static 'erp/img/acervo_logo.png' %}" alt="Imagem da postagem">
+    <a href="#" class="botao">Leia mais</a>
+</div>
+
 
 <div data-aos="fade-in" data-aos-duration="1000">
     <!-- Conteúdo do site -->

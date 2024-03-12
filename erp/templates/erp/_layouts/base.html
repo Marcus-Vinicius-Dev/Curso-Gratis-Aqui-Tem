@@ -20,10 +20,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'erp/css/master_tablet.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'erp/css/master_mobile.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'erp/css/aos.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'erp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'erp/css/style.css' %}"> <!-- adicionado em 12-03 responsável por incluir style.css no projeto-->
 
     <!-- Arquivos para ativação das máscara de CEP, CNPJ, etc -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--> <!--comentado por causa do jquery já funcional na linha de cima (deu problema no ao rodar o projeto no chrome)-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 
     {% block styles %}{% endblock %}
@@ -70,16 +71,16 @@
         </div>
     </nav>
     
-    <div class="container">
-        <div class="row" id="imagens-rolagem-infinita">
-            <!-- Loop para adicionar as imagens da rolagem infinita -->
-            {% for imagem in imagens %}
-            <div class="col-md-3">
-                <img src="{% static 'erp/img/' %}{{ imagem }}" alt="Imagem {{ forloop.counter }}">
-            </div>
-            {% endfor %}
+<div class="container">
+    <div class="row" id="imagens-rolagem-infinita">
+        <!-- Loop para adicionar as imagens da rolagem infinita -->
+        {% for imagem in imagens %}
+        <div class="col-md-3">
+            <img src="{% static 'erp/img/' %}{{ imagem }}" alt="Imagem {{ forloop.counter }}">
         </div>
+        {% endfor %}
     </div>
+</div>
 
 <!-- Arquivos JavaScript -->
 <script src="{% static 'erp/js/aos.js' %}"></script>
@@ -100,5 +101,8 @@
     });
 </script>
 {% endblock %}
+<script type="application/javascript">
+    AOS.init();
+</script>
 </body>
 </html>

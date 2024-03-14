@@ -84,6 +84,10 @@
         </div>   
     </div> -->
 
+    <form action="{% url 'erp:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
     
     <div class="">
         <!--*******************Conteúdo início*******************-->   
@@ -105,7 +109,7 @@
             <div class="post-card">
                 <div class="post-conteudo">
                     <img src="{% static '/erp/img/curso.png' %}" alt="imagem do curso">
-                    <p>Conteúdo da postagem...</p>
+                    <p>Conteúdo da postagem...</p>                                  
                 </div>
                 <div class="post-acoes">
                     <button class="acoes-btn like-btn"><img src="{% static '/erp/img/curtir.svg' %}" alt="ícone de curtir">Curtir</button>

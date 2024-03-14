@@ -19,6 +19,8 @@ from django.views.generic.list import ListView
 from django.http import JsonResponse
 from django.views.generic.edit import FormView
 
+from django.contrib.auth import views as auth_views #acrescentado em 14-03-24 por causa do erro de logout
+
 def index(request):
     return render(request, '../templates/index.html')
 

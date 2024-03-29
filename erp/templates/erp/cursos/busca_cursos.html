@@ -1,0 +1,49 @@
+{% extends "erp/_layouts/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Atualização de Cursos{% endblock %}
+
+{% block conteudo %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="detalhes">
+                            <h1>Pesquisa de Cursos</h1> 
+                            <br/>   
+                            <form method="post" action="{% url 'erp:busca_cursos' %}">
+                                {% csrf_token %}
+                                
+                                <label for="id_categoria">Categoria:</label>
+                                {{ form.categoria }}
+                                
+                                <!-- Outros campos de pesquisa, se necessário -->
+                                
+                                <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+                            </form>
+                            <br/> 
+                            <h2>Resultados da Pesquisa:</h2>
+                            <ul>
+                                {% for curso in cursos %}
+                                    <li>
+                                        <strong>Nome:</strong> {{ curso.nome }}<br>
+                                        <strong>Descrição:</strong> {{ curso.descricao }}<br>
+                                        <strong>Categoria:</strong> {{ curso.get_categoria_display }}<br>
+                                        <strong>Cidade:</strong> {{ curso.instituicao.cidade }}<br>
+                                        <a href="{% url 'erp:detalhes_curso' curso.pk %}">Detalhes</a><br><br>
+                                        
+                                        <!-- Outros campos de curso, se necessário -->
+                                    </li>
+                                {% empty %}
+                                    <p>Nenhum curso encontrado.</p>
+                                {% endfor %}
+                            </ul>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

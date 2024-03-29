@@ -1,0 +1,28 @@
+<!-- Estendemos do template base -->
+{% extends "erp/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Cursos Grátis Aqui tem{% endblock %}
+
+<!-- Bloco de conteúdo da nossa página -->
+{% block conteudo %}
+{% load static %}
+   
+<!-- <div id="cursos-container">
+    {% for curso in cursos %}
+        <div class="curso">
+            <h2>{{ curso.nome }}</h2>
+            <p>{{ curso.descricao }}</p>
+            <p>{{ curso.categoria }}</p>
+        </div>
+    {% endfor %}
+</div> -->
+
+{% include 'erp/cursos/postagem.html' %}
+
+<!-- Link para carregar mais cursos -->
+<!-- <a href="#" id="load-more-link">Carregar mais cursos</a> -->
+
+{% endblock %}
+
+

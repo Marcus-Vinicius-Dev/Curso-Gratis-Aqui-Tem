@@ -1,0 +1,57 @@
+<!-- 
+
+<div id="curso-list">
+    <!-- Aqui é onde a lista de cursos será exibida -->
+<!-- </div> -->
+
+<script>
+    // Variável para controlar o número de cursos carregados
+    var numCursosCarregados = 0;
+    // Variável para evitar solicitações duplicadas
+    var loading = false;
+
+    // Função para carregar mais cursos via AJAX
+    function carregarMaisCursos() {
+        if (!loading) {
+            loading = true;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/load_more_cursos/?num_cursos=' + numCursosCarregados, true);
+
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    var cursos = JSON.parse(xhr.responseText);
+                    if (cursos.length > 0) {
+                        // Atualizar a lista de cursos
+                        var cursoList = document.getElementById('curso-list');
+                        cursos.forEach(function(curso) {
+                            var cursoDiv = document.createElement('div');
+                            cursoDiv.innerHTML = `
+                                <h3>${curso.nome}</h3>
+                                <p>${curso.descricao}</p>
+                                <p>Categoria: ${curso.categoria}</p>
+                            `;
+                            cursoList.appendChild(cursoDiv);
+                        });
+                        numCursosCarregados += cursos.length;
+                    }
+                    loading = false;
+                }
+            };
+
+            xhr.send();
+        }
+    }
+
+    // Detectar a rolagem da página
+    window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY + window.innerHeight;
+        var documentHeight = document.body.offsetHeight;
+        if (scrollPosition >= documentHeight - 200) {
+            carregarMaisCursos();
+        }
+    });
+
+    // Carregar os primeiros cursos
+    carregarMaisCursos();
+</script> -->
+
